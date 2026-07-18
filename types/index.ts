@@ -80,4 +80,7 @@ export type GalleryImage = {
   src: string;
   alt: string;
   orientation: "portrait" | "landscape";
+  /** true = emplacement réservé (aucune photo encore) : affiché en tuile
+   *  « Photo à venir » pour laisser la cliente se projeter sur la mise en page. */
+  placeholder?: boolean;
 };

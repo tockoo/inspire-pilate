@@ -4,7 +4,7 @@ import "./globals.css";
 
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { siteConfig } from "@/config/site";
+import { siteConfig, isIndexable } from "@/config/site";
 import { LocalBusinessJsonLd } from "@/components/seo/JsonLd";
 
 const cormorant = Cormorant_Garamond({
@@ -57,9 +57,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  // Indexation globale pilotée par SITE_INDEXABLE (voir config/site.ts).
+  // Tant que le site n'est pas lancé, tout le site est en noindex.
   robots: {
-    index: true,
-    follow: true,
+    index: isIndexable,
+    follow: isIndexable,
   },
 };
 

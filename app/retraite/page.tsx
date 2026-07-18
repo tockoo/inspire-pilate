@@ -115,15 +115,19 @@ export default function RetreatPage() {
         </Container>
       </Section>
 
-      {/* Galerie */}
-      <Section spacing="md" className="bg-offwhite">
-        <Container>
-          <SectionHeading eyebrow="En images" title="Un avant-goût de l'expérience" />
-          <div className="mt-10">
-            <Gallery images={retreat.gallery} />
-          </div>
-        </Container>
-      </Section>
+      {/* Galerie — tuiles « Photo à venir » tant que les vraies photos ne sont
+          pas fournies (retreatGallery dans data/images.ts), pour visualiser la
+          mise en page sans image cassée. Masquée seulement si le tableau est vide. */}
+      {retreat.gallery.length > 0 && (
+        <Section spacing="md" className="bg-offwhite">
+          <Container>
+            <SectionHeading eyebrow="En images" title="Un avant-goût de l'expérience" />
+            <div className="mt-10">
+              <Gallery images={retreat.gallery} />
+            </div>
+          </Container>
+        </Section>
+      )}
 
       {/* FAQ retraite */}
       <Section spacing="md" className="bg-cream">

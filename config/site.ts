@@ -53,6 +53,17 @@ export const siteConfig = {
 } as const;
 
 // ==========================================================================
+// INDEXATION PAR LES MOTEURS DE RECHERCHE
+// --------------------------------------------------------------------------
+// Désactivée par défaut tant que le site n'est pas officiellement lancé
+// (domaine final non figé + pages légales à compléter). La préprod reste
+// ainsi en `noindex` et ne pollue pas l'index Google.
+// 👉 Le jour du lancement : définir SITE_INDEXABLE=true en production
+//    (et renseigner NEXT_PUBLIC_SITE_URL avec le domaine officiel).
+// ==========================================================================
+export const isIndexable = process.env.SITE_INDEXABLE === "true";
+
+// ==========================================================================
 // DESTINATION DE RÉSERVATION — POINT UNIQUE DE CONFIGURATION (PHASE 1)
 // --------------------------------------------------------------------------
 // En phase 1, le bouton "Réserver un cours" pointe vers une destination

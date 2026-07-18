@@ -121,27 +121,16 @@ export const images = {
     },
   ],
 
-  // Dépose les fichiers /public/images/retraite-galerie-1.jpg … 4.jpg
+  // --- Galerie retraite ---
+  // Emplacements réservés (placeholder: true) : la section "En images" de
+  // /retraite affiche des tuiles « Photo à venir » pour visualiser la mise en
+  // page, sans image cassée. Dès que les vraies photos sont disponibles :
+  // déposer les fichiers dans /public/images/, renseigner "src" et retirer
+  // "placeholder" sur chaque entrée.
   retreatGallery: [
-    {
-      src: "/images/retraite-galerie-1.jpg",
-      alt: "Sentier côtier au lever du jour",
-      orientation: "landscape",
-    },
-    {
-      src: "/images/retraite-galerie-2.jpg",
-      alt: "Moment de calme face à la mer",
-      orientation: "portrait",
-    },
-    {
-      src: "/images/retraite-galerie-3.jpg",
-      alt: "Lumière douce sur un intérieur épuré",
-      orientation: "portrait",
-    },
-    {
-      src: "/images/retraite-galerie-4.jpg",
-      alt: "Nature préservée et sérénité",
-      orientation: "landscape",
-    },
+    { src: "/images/retraite-galerie-1.jpg", alt: "Sentier côtier au lever du jour", orientation: "landscape", placeholder: true },
+    { src: "/images/retraite-galerie-2.jpg", alt: "Moment de calme face à la mer", orientation: "portrait", placeholder: true },
+    { src: "/images/retraite-galerie-3.jpg", alt: "Lumière douce sur un intérieur épuré", orientation: "portrait", placeholder: true },
+    { src: "/images/retraite-galerie-4.jpg", alt: "Nature préservée et sérénité", orientation: "landscape", placeholder: true },
   ],
 } as const;

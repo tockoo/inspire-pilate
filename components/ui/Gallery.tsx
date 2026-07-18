@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import type { GalleryImage } from "@/types";
-import { IconClose } from "@/components/ui/icons";
+import { IconClose, IconImage } from "@/components/ui/icons";
 import { cn } from "@/lib/utils";
 
 /**
@@ -30,30 +30,54 @@ export function Gallery({ images }: { images: readonly GalleryImage[] }) {
   return (
     <>
       <div className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
-        {images.map((img, i) => (
-          <button
-            key={img.src}
-            type="button"
-            onClick={() => setActive(i)}
-            className={cn(
-              "group relative overflow-hidden rounded-xl bg-sand focus-visible:outline-offset-4",
-              img.orientation === "portrait"
-                ? "row-span-2 aspect-[3/4]"
-                : "aspect-[4/3]",
-              // Variation éditoriale : la première image occupe plus de place
-              i === 0 && "col-span-2 md:col-span-2 md:row-span-2 md:aspect-auto"
-            )}
-            aria-label={`Agrandir : ${img.alt}`}
-          >
-            <Image
-              src={img.src}
-              alt={img.alt}
-              fill
-              sizes="(max-width: 768px) 50vw, 25vw"
-              className="object-cover transition-transform duration-[1200ms] ease-soft group-hover:scale-105"
-            />
-          </button>
-        ))}
+        {images.map((img, i) => {
+          // Mise en page mosaïque partagée (tuile image ou placeholder).
+          const shapeClasses = cn(
+            img.orientation === "portrait" ? "row-span-2 aspect-[3/4]" : "aspect-[4/3]",
+            // Variation éditoriale : la première image occupe plus de place
+            i === 0 && "col-span-2 md:col-span-2 md:row-span-2 md:aspect-auto"
+          );
+
+          // Emplacement réservé (aucune photo encore) : tuile « Photo à venir »,
+          // non cliquable, pour laisser la cliente se projeter sur la composition.
+          if (img.placeholder || !img.src) {
+            return (
+              <div
+                key={`placeholder-${i}`}
+                className={cn(
+                  "relative overflow-hidden rounded-xl border border-umber/10 bg-sand",
+                  shapeClasses
+                )}
+              >
+                <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 p-4 text-center text-umber/40">
+                  <IconImage className="h-7 w-7" />
+                  <span className="text-[11px] uppercase tracking-[0.18em]">Photo à venir</span>
+                </div>
+              </div>
+            );
+          }
+
+          return (
+            <button
+              key={img.src}
+              type="button"
+              onClick={() => setActive(i)}
+              className={cn(
+                "group relative overflow-hidden rounded-xl bg-sand focus-visible:outline-offset-4",
+                shapeClasses
+              )}
+              aria-label={`Agrandir : ${img.alt}`}
+            >
+              <Image
+                src={img.src}
+                alt={img.alt}
+                fill
+                sizes="(max-width: 768px) 50vw, 25vw"
+                className="object-cover transition-transform duration-[1200ms] ease-soft group-hover:scale-105"
+              />
+            </button>
+          );
+        })}
       </div>
 
       {/* Lightbox */}
