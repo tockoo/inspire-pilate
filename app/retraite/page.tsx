@@ -13,7 +13,7 @@ import { retreat, retreatStatusLabels } from "@/data/retreat";
 export const metadata: Metadata = {
   title: "Retraite",
   description:
-    "Une retraite bien-être proposée par Inspire Pilates : mouvement, nature et détente pour se recentrer. Programme et dates à venir.",
+    "Week-end Yoga, Surf & Pilates du 11 au 13 septembre 2026 à Saint-Jean-de-Monts (Vendée). Yoga, Pilates sur la plage, surf encadré et détente pour se ressourcer, à partir de 550 €/personne.",
   alternates: { canonical: "/retraite" },
 };
 
@@ -62,6 +62,11 @@ export default function RetreatPage() {
             <span className="rounded-full bg-beige/70 px-4 py-2 text-sm text-wood">
               {retreat.dates}
             </span>
+            {retreat.price && (
+              <span className="rounded-full bg-clay/15 px-4 py-2 text-sm font-medium text-wood">
+                {retreat.price}
+              </span>
+            )}
           </div>
         </Container>
       </Section>

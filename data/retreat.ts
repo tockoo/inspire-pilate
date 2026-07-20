@@ -1,46 +1,56 @@
 // ==========================================================================
 // Retraite — Inspire Pilates
-// ⚠️ Contenu en grande partie PLACEHOLDER : dates, lieu et programme exacts
-//    doivent être fournis par le studio. Modifiez uniquement ce fichier.
+// Week-end Yoga, Surf & Pilates (11–13 septembre 2026, Saint-Jean-de-Monts).
+// Contenu issu du studio (partenaires : YODEGA, Mojo Surf, Villa Alizée,
+// Le Bec à Vin). Le déroulé vendredi/samedi/dimanche est indicatif.
 // ==========================================================================
 
 import type { Retreat } from "@/types";
 import { images } from "@/data/images";
 
 export const retreat: Retreat = {
-  provisional: true, // Passer à false une fois les informations validées
+  provisional: false,
 
-  title: "Retraite bien-être à l'île de Ré (c'est un exemple)",
-  location: "Île de Ré - lieu exact à confirmer", // À CONFIRMER
-  dates: "Septembre 2026 (dates à confirmer)", // À CONFIRMER
-  status: "bientot-disponible", // "inscriptions-ouvertes" | "bientot-disponible" | "complet" | "liste-attente"
+  title: "Week-end Yoga, Surf & Pilates",
+  location: "Saint-Jean-de-Monts, Vendée",
+  dates: "Du 11 au 13 septembre 2026",
+  price: "À partir de 550 €/personne",
+  status: "inscriptions-ouvertes",
 
   intro:
-    "Un séjour ressourçant entre Pilates, nature et moments de détente pour vous recentrer et retrouver votre énergie.",
+    "Trois jours pour se déposer, entre yoga, Pilates, surf et nature — à deux pas de l'océan, au cœur de la pinède vendéenne.",
   philosophy:
-    "Loin du quotidien, cette retraite invite à ralentir. Le mouvement y devient une manière de se reconnecter à soi, dans un cadre naturel et apaisant. Chaque journée mêle pratique douce, respiration, temps libre et convivialité.",
+    "Loin du quotidien, ce week-end invite à ralentir et à se reconnecter à soi. Yoga au réveil, Pilates les pieds dans le sable, surf, balades à vélo et brunchs préparés avec soin : une parenthèse pensée pour vous ressourcer, en petit comité et en pleine nature.",
 
-  // Programme configurable — structure d'exemple à ajuster
+  // Déroulé indicatif du week-end (à ajuster selon l'organisation finale).
   program: [
-    { day: "Jour 1", text: "Arrivée, installation et première séance douce en fin de journée." },
-    { day: "Jour 2", text: "Pilates au réveil, temps libre, atelier respiration et mobilité." },
-    { day: "Jour 3", text: "Séance matinale, balade nature et pratique en extérieur." },
-    { day: "Jour 4", text: "Reformer / tapis, moment de détente et soirée conviviale." },
-    { day: "Jour 5", text: "Séance de clôture, échanges et départ en douceur." },
+    {
+      day: "Vendredi",
+      text: "Arrivée à la Villa Alizée, installation et première séance douce pour se poser.",
+    },
+    {
+      day: "Samedi",
+      text: "Yoga postural et respiratoire au réveil, Pilates sur la plage, 1h30 de surf encadré et balade à vélo entre terre et mer — ponctués de brunchs et de recettes healthy.",
+    },
+    {
+      day: "Dimanche",
+      text: "Séance matinale face à l'océan, dernier moment de partage et départ en douceur.",
+    },
   ],
 
   included: [
-    "Hébergement pour la durée du séjour",
-    "Séances de Pilates quotidiennes",
-    "Ateliers respiration et mobilité",
-    "Temps libre et moments de détente",
-    // ⚠️ Détails (repas, transport, etc.) à confirmer par le studio
+    "Hébergement à la Villa Alizée, à 600 m de la plage, au cœur de la pinède",
+    "Yoga postural et respiratoire avec Sophie (YODEGA)",
+    "Pilates sur la plage avec Dolorès (Inspire Pilates)",
+    "1h30 de surf encadré par Mojo Surf",
+    "Balades à vélo entre terre et mer",
+    "Brunch au Bec à Vin et recettes healthy tout le week-end",
   ],
 
   audience: [
-    "Toutes celles qui souhaitent s'accorder une parenthèse bien-être",
-    "Débutantes comme pratiquantes régulières",
-    "Envie de mouvement, de nature et de calme",
+    "Celles qui souhaitent une vraie parenthèse ressourçante, entre mer et pinède",
+    "Débutantes comme pratiquantes régulières : yoga, Pilates et surf accessibles à tous les niveaux",
+    "Envie de mouvement, de nature et de convivialité",
   ],
 
   image: images.retreatHero.src,
@@ -50,25 +60,35 @@ export const retreat: Retreat = {
 
   faq: [
     {
-      id: "r1",
-      question: "Faut-il déjà pratiquer le Pilates ?",
+      id: "r-niveau",
+      question: "Faut-il déjà pratiquer le yoga, le Pilates ou le surf ?",
       answer:
-        "Non. La retraite est ouverte à tous les niveaux, les séances sont adaptées à chacune.",
-      provisional: true,
+        "Non. Les séances sont adaptées à tous les niveaux, et le surf est encadré par des professionnels de Mojo Surf : débutantes bienvenues.",
     },
     {
-      id: "r2",
-      question: "Comment s'inscrire ?",
+      id: "r-encadrement",
+      question: "Qui encadre le week-end ?",
       answer:
-        "Les modalités d'inscription seront communiquées prochainement. Contactez le studio pour être informée en priorité.",
-      provisional: true,
+        "Dolorès pour le Pilates (Inspire Pilates) et Sophie pour le yoga (YODEGA), accompagnées de l'équipe Mojo Surf pour la session de surf.",
     },
     {
-      id: "r3",
+      id: "r-hebergement",
+      question: "Où loge-t-on ?",
+      answer:
+        "À la Villa Alizée, une maison bord de mer à 600 m de la plage, au cœur de la pinède, propice à la déconnexion.",
+    },
+    {
+      id: "r-prevoir",
       question: "Que faut-il prévoir ?",
       answer:
-        "Une tenue confortable et de quoi profiter du temps libre. La liste détaillée sera transmise avant le séjour.",
+        "Une tenue confortable pour bouger, un maillot de bain et de quoi profiter du temps libre. La liste détaillée vous sera transmise à l'inscription.",
       provisional: true,
+    },
+    {
+      id: "r-inscription",
+      question: "Comment s'inscrire ?",
+      answer:
+        "Écrivez-nous à contact@inspirepilates.fr : nous vous transmettons toutes les informations et les modalités de réservation.",
     },
   ],
 };

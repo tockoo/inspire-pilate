@@ -84,8 +84,13 @@ export default function ContactPage() {
                   </a>
                 </ContactRow>
                 <ContactRow icon={<IconClock className="h-5 w-5" />} label="Horaires">
-                  <span className="text-umber">
-                    {hours.label} · {hours.note}
+                  <span className="block text-umber">
+                    {hours.schedule.map((d) => (
+                      <span key={d.day} className="block">
+                        <span className="text-ink/55">{d.day}</span> · {d.slots.join(" / ")}
+                      </span>
+                    ))}
+                    <span className="mt-1 block text-sm text-ink/50">{hours.note}</span>
                   </span>
                 </ContactRow>
               </ul>

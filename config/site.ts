@@ -21,7 +21,7 @@ export const siteConfig = {
     phone: "06 75 01 14 14",
     // Format international pour les liens tel: et WhatsApp
     phoneRaw: "+33675011414",
-    email: "contact@inspirepilates.fr", // À CONFIRMER par le studio
+    email: "contact@inspirepilates.fr",
     address: {
       street: "Chemin Victor Forquenot",
       postalCode: "44120",
@@ -36,10 +36,16 @@ export const siteConfig = {
     instagramHandle: "@inspirepilates_vertou",
   },
 
-  // --- Horaires (configurable — à confirmer par le studio) ---
+  // --- Horaires du studio ---
   hours: {
-    label: "Du lundi au samedi",
+    label: "Lundi, mardi, jeudi et vendredi",
     note: "Sur réservation",
+    schedule: [
+      { day: "Lundi", slots: ["9h00 – 14h00"] },
+      { day: "Mardi", slots: ["9h00 – 14h00", "17h00 – 20h30"] },
+      { day: "Jeudi", slots: ["9h00 – 14h00", "17h30 – 20h00"] },
+      { day: "Vendredi", slots: ["9h00 – 14h00"] },
+    ],
   },
 
   // --- Géolocalisation pour Google Maps / données structurées ---
@@ -79,8 +85,9 @@ type ReservationTarget =
   | { type: "contact"; href: string }; // Formulaire de contact interne
 
 export const reservation: ReservationTarget = {
-  // 🔧 Phase 1 : par défaut, redirige vers le formulaire de contact interne.
-  // Remplacez par WhatsApp / Instagram / URL externe selon les besoins.
+  // Phase 1 : le bouton « Réserver » pointe vers WhatsApp. Le jour du
+  // déploiement de la réservation en ligne (Phase 2), basculer `type` sur
+  // "internal" avec href "/reservation".
   type: "whatsapp",
   href: `https://wa.me/${siteConfig.contact.phoneRaw.replace("+", "")}?text=${encodeURIComponent(
     "Bonjour Inspire Pilates, je souhaite réserver un cours."

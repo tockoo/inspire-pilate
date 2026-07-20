@@ -14,7 +14,7 @@ import { cn } from "@/lib/utils";
 export const metadata: Metadata = {
   title: "Les Cours",
   description:
-    "Pilates sur tapis, Springboard et Reformer à Vertou. Découvrez chaque pratique, ses bénéfices et son fonctionnement. Cours adaptables selon le niveau.",
+    "Pilates sur tapis & Springboard et Pilates Reformer à Vertou. Découvrez chaque pratique, ses bénéfices et son fonctionnement. Cours adaptables selon le niveau.",
   alternates: { canonical: "/les-cours" },
 };
 
@@ -25,10 +25,10 @@ export default function CoursesPage() {
         eyebrow="Les Cours"
         title={
           <>
-            Trois pratiques, une même <span className="italic">exigence de justesse.</span>
+            Deux pratiques, une même <span className="italic">exigence de justesse.</span>
           </>
         }
-        intro="Tapis, Springboard et Reformer : trois manières complémentaires de renforcer le corps, gagner en mobilité et affiner le contrôle."
+        intro="Pilates sur tapis & Springboard et Pilates Reformer : deux manières complémentaires de renforcer le corps, gagner en mobilité et affiner le contrôle."
         image={images.courseReformer}
         size="lg"
       />

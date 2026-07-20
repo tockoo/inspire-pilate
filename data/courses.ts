@@ -1,5 +1,8 @@
 // ==========================================================================
 // Les Cours — Inspire Pilates (source unique de vérité)
+// Le studio propose 2 disciplines : Pilates sur tapis & Springboard, et
+// Pilates Reformer. (Les « niveaux » — Fondation/Progression, Niveau 1/2 —
+// sont gérés dans le planning de réservation, pas sur cette page vitrine.)
 // ==========================================================================
 
 import type { Course } from "@/types";
@@ -7,18 +10,18 @@ import { images } from "@/data/images";
 
 export const courses: Course[] = [
   {
-    slug: "tapis",
-    name: "Pilates sur tapis",
-    tagline: "Le mouvement à l'état pur",
+    slug: "tapis-springboard",
+    name: "Pilates sur tapis & Springboard",
+    tagline: "Fondations & ressorts",
     shortDescription:
-      "Un travail complet au sol pour renforcer, étirer et améliorer votre posture.",
+      "Un travail au sol complet, enrichi par les ressorts muraux du Springboard, pour renforcer, mobiliser et gagner en contrôle.",
     longDescription:
-      "Le Pilates sur tapis (matwork) est la base de la méthode. Sans appareil, le travail repose sur le poids du corps et la précision du mouvement. On y développe la conscience du centre, la respiration et un gainage profond qui soutient toute la pratique.",
+      "Le Pilates sur tapis est la base de la méthode : sans appareil, le travail repose sur le poids du corps et la précision du mouvement. On y développe la conscience du centre, la respiration et un gainage profond. Le Springboard, panneau mural équipé de ressorts, vient enrichir cette pratique — tantôt en assistance pour bien apprendre les mouvements, tantôt en résistance pour gagner en force. Une même séance conjugue ainsi travail au sol et accompagnement précis, allongée comme debout.",
     benefits: [
       "Renforcement du centre (core) en profondeur",
       "Meilleure posture et alignement",
-      "Mobilité et fluidité du mouvement",
-      "Contrôle et respiration",
+      "Ressorts : assistance ou résistance modulables",
+      "Mobilité, contrôle et respiration",
     ],
     highlights: [
       {
@@ -26,60 +29,27 @@ export const courses: Course[] = [
         text: "Chaque exercice part du centre du corps pour stabiliser et protéger le dos.",
       },
       {
-        title: "Posture & contrôle",
-        text: "Des mouvements lents et précis qui rééduquent la posture au quotidien.",
+        title: "Le principe des ressorts",
+        text: "Le Springboard aide la débutante et défie la pratiquante confirmée.",
       },
       {
         title: "Pour qui ?",
-        text: "Accessible à toutes et tous, y compris pour une première approche du Pilates.",
+        text: "Accessible à toutes, des fondations jusqu'à la progression.",
       },
     ],
-    level: "Adaptable selon le niveau",
-    duration: "Séance d'environ 55 min", // durée configurable
-    image: images.courseTapis.src,
-    imageAlt: images.courseTapis.alt,
-  },
-  {
-    slug: "springboard",
-    name: "Springboard",
-    tagline: "Ressorts, assistance et résistance",
-    shortDescription:
-      "Résistance et assistance pour développer force, contrôle et fluidité.",
-    longDescription:
-      "Le Springboard est un panneau mural équipé de ressorts. Ils offrent tantôt de l'assistance, tantôt de la résistance, pour accompagner ou intensifier le mouvement. C'est un excellent outil pour affiner le contrôle et travailler avec précision, debout comme au sol.",
-    benefits: [
-      "Renforcement progressif grâce aux ressorts",
-      "Assistance pour bien apprendre les mouvements",
-      "Résistance pour développer la force",
-      "Travail de précision et de coordination",
-    ],
-    highlights: [
-      {
-        title: "Le principe des ressorts",
-        text: "Les ressorts modulent l'effort : ils aident le débutant et défient le pratiquant confirmé.",
-      },
-      {
-        title: "Assistance & résistance",
-        text: "Un même exercice peut être facilité ou intensifié selon l'accroche choisie.",
-      },
-      {
-        title: "Précision",
-        text: "Le retour des ressorts affine la conscience du mouvement et l'alignement.",
-      },
-    ],
-    level: "Adaptable selon le niveau",
+    level: "Fondation & Progression, adaptable",
     duration: "Séance d'environ 55 min", // durée configurable
     image: images.courseSpringboard.src,
     imageAlt: images.courseSpringboard.alt,
   },
   {
     slug: "reformer",
-    name: "Reformer",
+    name: "Pilates Reformer",
     tagline: "Le grand classique du Pilates",
     shortDescription:
-      "Un entraînement précis et efficace pour sculpter, tonifier et rééquilibrer.",
+      "L'appareil emblématique du Pilates : un chariot coulissant sur ressorts pour un travail global, précis et accompagné.",
     longDescription:
-      "Le Reformer est l'appareil emblématique du Pilates : un chariot coulissant monté sur ressorts. Il permet un travail global du corps, en résistance comme en étirement, avec un accompagnement précis. Chaque séance conjugue force, mobilité et contrôle dans un mouvement fluide.",
+      "Le Reformer est l'appareil emblématique du Pilates : un chariot coulissant monté sur ressorts. Il permet un travail global du corps, en résistance comme en étirement, avec un accompagnement précis. Chaque séance conjugue force, mobilité et contrôle dans un mouvement fluide, adapté à votre niveau.",
     benefits: [
       "Travail global du corps",
       "Résistance ajustable via les ressorts",
@@ -100,7 +70,7 @@ export const courses: Course[] = [
         text: "Les réglages s'adaptent à chacune pour une pratique sûre et progressive.",
       },
     ],
-    level: "Adaptable selon le niveau",
+    level: "Niveaux 1, 2 et mixte",
     duration: "Séance d'environ 55 min", // durée configurable
     image: images.courseReformer.src,
     imageAlt: images.courseReformer.alt,

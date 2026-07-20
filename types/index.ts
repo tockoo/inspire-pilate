@@ -7,7 +7,7 @@ export type NavLink = {
   href: string;
 };
 
-export type CourseSlug = "tapis" | "springboard" | "reformer";
+export type CourseSlug = "tapis-springboard" | "reformer";
 
 export type Course = {
   slug: CourseSlug;
@@ -62,6 +62,8 @@ export type Retreat = {
   location: string;
   /** Mention libre configurable (ex: "26 – 30 juin 2025") — placeholder tant que non confirmé */
   dates: string;
+  /** Tarif affiché (ex: "À partir de 550 €/personne"). Optionnel. */
+  price?: string;
   status: RetreatStatus;
   intro: string;
   philosophy: string;

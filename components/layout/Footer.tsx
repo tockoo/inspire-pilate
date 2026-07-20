@@ -101,8 +101,14 @@ export function Footer() {
           <h3 className="text-cream text-sm uppercase tracking-widest">
             Horaires
           </h3>
-          <p className="text-sm text-cream/75">{hours.label}</p>
-          <p className="text-sm text-cream/75">{hours.note}</p>
+          <ul className="space-y-1">
+            {hours.schedule.map((d) => (
+              <li key={d.day} className="text-sm text-cream/75">
+                <span className="text-cream/90">{d.day}</span> · {d.slots.join(" / ")}
+              </li>
+            ))}
+          </ul>
+          <p className="text-sm text-cream/60">{hours.note}</p>
           <a
             href={directionsUrl}
             target="_blank"

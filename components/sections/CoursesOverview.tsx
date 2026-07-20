@@ -9,8 +9,8 @@ import { courses } from "@/data/courses";
 import { cn } from "@/lib/utils";
 
 /**
- * Aperçu des trois univers de cours.
- * Composition éditoriale avec rythme (offsets verticaux) plutôt que 3 cartes identiques.
+ * Aperçu des deux disciplines de cours.
+ * Composition éditoriale avec rythme (offset vertical) plutôt que 2 cartes identiques.
  */
 export function CoursesOverview() {
   return (
@@ -21,13 +21,13 @@ export function CoursesOverview() {
           eyebrow="Nos cours"
           title={
             <>
-              Trois approches, un même objectif&nbsp;:{" "}
+              Deux approches, un même objectif&nbsp;:{" "}
               <span className="italic">votre équilibre.</span>
             </>
           }
         />
 
-        <div className="mt-14 grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-6">
+        <div className="mx-auto mt-14 grid max-w-4xl grid-cols-1 gap-8 md:grid-cols-2 md:gap-10">
           {courses.map((course, i) => (
             <Reveal
               key={course.slug}

@@ -41,7 +41,8 @@ export function PracticalInfo({ withHeading = true }: { withHeading?: boolean })
     {
       icon: <IconClock className="h-5 w-5" />,
       label: "Horaires",
-      value: `${hours.label} · ${hours.note}`,
+      value: hours.note,
+      schedule: hours.schedule,
     },
   ];
 
@@ -68,7 +69,19 @@ export function PracticalInfo({ withHeading = true }: { withHeading?: boolean })
                     <p className="text-xs uppercase tracking-widest text-clay">
                       {item.label}
                     </p>
-                    {item.href ? (
+                    {item.schedule ? (
+                      <>
+                        <ul className="mt-0.5 space-y-0.5">
+                          {item.schedule.map((d) => (
+                            <li key={d.day} className="text-umber">
+                              <span className="text-ink/55">{d.day}</span> ·{" "}
+                              {d.slots.join(" / ")}
+                            </li>
+                          ))}
+                        </ul>
+                        <p className="mt-1 text-xs text-ink/50">{item.value}</p>
+                      </>
+                    ) : item.href ? (
                       <a
                         href={item.href}
                         target={item.external ? "_blank" : undefined}
