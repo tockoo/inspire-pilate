@@ -32,7 +32,7 @@ export const retreat: Retreat = {
       image: "/images/sophie-lenoir.jpg",
       imageAlt: "Sophie Lenoir, professeure de yoga",
       bio: "Sophie guide les séances de yoga postural et respiratoire du week-end, pour délier le corps et apaiser le mental.",
-      imageAlt: "Sophie Lenoir, professeure de yoga",
+      
     },
     {
       name: "Dolorès Cabardis",
@@ -40,7 +40,7 @@ export const retreat: Retreat = {
       image: "/images/dolores-cabardis.jpg",
       imageAlt: "Dolorès Cabardis, professeure de Pilates",
       bio: "Danseuse depuis toujours, le mouvement a toujours fait partie de ma vie. Après trois grossesses, dont une IMG et une dépression post-partum, le Pilates a été une véritable reconnexion à mon corps : plus consciente, plus forte, plus alignée.",
-      imageAlt: "Dolorès Cabardis, professeure de Pilates",
+      
     },
   ],
 
