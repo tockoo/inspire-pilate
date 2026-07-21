@@ -23,10 +23,13 @@ export function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Ferme le menu mobile lors d'un changement de page.
-  useEffect(() => {
+  // Ferme le menu mobile lors d'un changement de page (ajustement d'état
+  // pendant le rendu — pattern React recommandé, évite un effet + re-rendu).
+  const [lastPathname, setLastPathname] = useState(pathname);
+  if (pathname !== lastPathname) {
+    setLastPathname(pathname);
     setOpen(false);
-  }, [pathname]);
+  }
 
   // Bloque le scroll du body quand le menu mobile est ouvert.
   useEffect(() => {

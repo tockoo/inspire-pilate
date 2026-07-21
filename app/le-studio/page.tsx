@@ -131,7 +131,7 @@ export default function StudioPage() {
                   Danseuse depuis toujours, le mouvement a toujours fait partie de ma
                   vie. C&apos;est en traversant la maternité et une période personnelle
                   plus difficile que le Pilates est devenu bien plus qu&apos;une
-                  pratique&nbsp;: une véritable reconnexion à mon corps — plus
+                  pratique&nbsp;: une véritable reconnexion à mon corps : plus
                   consciente, plus forte, plus alignée.
                 </p>
                 <p>

@@ -47,7 +47,6 @@ export function Accordion({ items }: { items: FaqItem[] }) {
               <p className="text-ink/70 leading-relaxed">{item.answer}</p>
               {item.provisional && (
                 <p className="mt-2 text-xs italic text-clay/80">
-                  Réponse provisoire — à confirmer par le studio.
                 </p>
               )}
             </div>

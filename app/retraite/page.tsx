@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 
 import { PageHero } from "@/components/sections/PageHero";
 import { Section, Container } from "@/components/ui/Section";
@@ -7,13 +8,19 @@ import { Reveal } from "@/components/ui/Reveal";
 import { Gallery } from "@/components/ui/Gallery";
 import { Accordion } from "@/components/ui/Accordion";
 import { Button } from "@/components/ui/Button";
-import { IconCheck, IconMapPin } from "@/components/ui/icons";
+import {
+  IconCheck,
+  IconMapPin,
+  IconClock,
+  IconInstagram,
+  IconImage,
+} from "@/components/ui/icons";
 import { retreat, retreatStatusLabels } from "@/data/retreat";
 
 export const metadata: Metadata = {
   title: "Retraite",
   description:
-    "Week-end Yoga, Surf & Pilates du 11 au 13 septembre 2026 à Saint-Jean-de-Monts (Vendée). Yoga, Pilates sur la plage, surf encadré et détente pour se ressourcer, à partir de 550 €/personne.",
+    "Week-end Pilates, Yoga & Surf du 11 au 13 septembre 2026 à Saint-Jean-de-Monts (Vendée). Pilates, yoga, surf encadré, brunchs et détente à la Villa Alizée, à partir de 450 €/personne.",
   alternates: { canonical: "/retraite" },
 };
 
@@ -23,6 +30,26 @@ const ctaLabels: Record<typeof retreat.status, string> = {
   complet: "Rejoindre la liste d'attente",
   "liste-attente": "Rejoindre la liste d'attente",
 };
+
+function Badge({
+  children,
+  accent = false,
+}: {
+  children: React.ReactNode;
+  accent?: boolean;
+}) {
+  return (
+    <span
+      className={
+        accent
+          ? "inline-flex items-center gap-2 rounded-full bg-clay/15 px-4 py-2 text-sm font-medium text-wood"
+          : "inline-flex items-center gap-2 rounded-full bg-beige/70 px-4 py-2 text-sm text-wood"
+      }
+    >
+      {children}
+    </span>
+  );
+}
 
 export default function RetreatPage() {
   return (
@@ -39,59 +66,163 @@ export default function RetreatPage() {
       {retreat.provisional && (
         <div className="bg-beige/60">
           <div className="container-wide py-3 text-center text-xs italic text-wood">
-            Informations provisoires — dates, lieu et programme à confirmer par le studio.
+            Informations provisoires — à confirmer par le studio.
           </div>
         </div>
       )}
 
-      {/* Philosophie */}
-      <Section spacing="lg" className="bg-cream">
+      {/* Repères clés + philosophie */}
+      <Section spacing="md" className="bg-cream">
         <Container>
-          <Reveal className="mx-auto max-w-3xl text-center">
-            <p className="eyebrow mb-4">L&apos;expérience</p>
-            <h2 className="text-3xl leading-tight text-balance md:text-4xl">
-              Ralentir, respirer, se <span className="italic">retrouver.</span>
-            </h2>
-            <p className="prose-soft mt-6 text-lg">{retreat.philosophy}</p>
-          </Reveal>
-
-          <div className="mx-auto mt-10 flex max-w-xl flex-col items-center gap-3 sm:flex-row sm:justify-center">
-            <span className="inline-flex items-center gap-2 rounded-full bg-beige/70 px-4 py-2 text-sm text-wood">
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            <Badge>
               <IconMapPin className="h-4 w-4" /> {retreat.location}
-            </span>
-            <span className="rounded-full bg-beige/70 px-4 py-2 text-sm text-wood">
-              {retreat.dates}
-            </span>
-            {retreat.price && (
-              <span className="rounded-full bg-clay/15 px-4 py-2 text-sm font-medium text-wood">
-                {retreat.price}
-              </span>
+            </Badge>
+            <Badge>{retreat.dates}</Badge>
+            {retreat.duration && <Badge>{retreat.duration}</Badge>}
+            {retreat.price && <Badge accent>{retreat.price}</Badge>}
+          </div>
+          <Reveal className="mx-auto mt-10 max-w-3xl text-center">
+            <p className="prose-soft text-lg">{retreat.philosophy}</p>
+          </Reveal>
+        </Container>
+      </Section>
+
+      {/* Au programme */}
+      <Section spacing="md" className="bg-offwhite">
+        <Container>
+          <SectionHeading eyebrow="Au programme" title="Trois jours pour se ressourcer" />
+          <ul className="mx-auto mt-10 grid max-w-3xl grid-cols-1 gap-3 sm:grid-cols-2">
+            {retreat.program.map((item) => (
+              <li
+                key={item}
+                className="flex items-start gap-3 rounded-xl border border-umber/12 bg-cream px-5 py-3 text-ink/80"
+              >
+                <IconCheck className="mt-1 h-4 w-4 shrink-0 text-clay" />
+                {item}
+              </li>
+            ))}
+          </ul>
+        </Container>
+      </Section>
+
+      {/* Les intervenantes */}
+      <Section spacing="md" className="bg-cream">
+        <Container>
+          <SectionHeading eyebrow="Les intervenantes" title="Encadrée par deux passionnées" />
+          <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-12">
+            {retreat.hosts.map((host, i) => (
+              <Reveal key={host.name} delay={i * 100} as="article">
+                <div className="flex flex-col gap-5 sm:flex-row">
+                  <div className="relative aspect-[3/4] w-full shrink-0 overflow-hidden rounded-2xl border border-umber/10 bg-sand sm:w-40">
+                    {host.image ? (
+                      <Image
+                        src={host.image}
+                        alt={host.imageAlt ?? host.name}
+                        fill
+                        sizes="160px"
+                        className="object-cover"
+                      />
+                    ) : (
+                      <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 p-3 text-center text-umber/40">
+                        <IconImage className="h-6 w-6" />
+                        <span className="text-[10px] uppercase tracking-[0.18em]">
+                          Photo à venir
+                        </span>
+                      </div>
+                    )}
+                  </div>
+                  <div>
+                    <h3 className="font-serif text-2xl text-umber">{host.name}</h3>
+                    <p className="eyebrow mt-1">{host.role}</p>
+                    {host.bio && <p className="prose-soft mt-3 text-sm">{host.bio}</p>}
+                    {host.instagram && (
+                      <a
+                        href={host.instagram}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-3 inline-flex items-center gap-2 text-xs uppercase tracking-widest text-clay hover:text-wood"
+                      >
+                        <IconInstagram className="h-4 w-4" /> Instagram
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </Container>
+      </Section>
+
+      {/* L'hébergement */}
+      <Section spacing="md" className="bg-offwhite">
+        <Container>
+          <SectionHeading eyebrow="L'hébergement" title={retreat.accommodation.name} />
+          <div className="mt-12 grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
+            <Reveal>
+              <div className="prose-soft space-y-4">
+                {retreat.accommodation.text.map((p) => (
+                  <p key={p}>{p}</p>
+                ))}
+              </div>
+              {retreat.accommodation.instagram && (
+                <a
+                  href={retreat.accommodation.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-5 inline-flex items-center gap-2 text-sm uppercase tracking-widest text-clay hover:text-wood"
+                >
+                  <IconInstagram className="h-4 w-4" /> @villa_alizee_
+                </a>
+              )}
+            </Reveal>
+            {retreat.accommodation.gallery.length > 0 && (
+              <Reveal delay={120}>
+                <Gallery images={retreat.accommodation.gallery} />
+              </Reveal>
             )}
           </div>
         </Container>
       </Section>
 
-      {/* Programme */}
-      <Section spacing="md" className="bg-offwhite">
+      {/* Les chambres & tarifs */}
+      <Section spacing="md" className="bg-cream">
         <Container>
-          <SectionHeading eyebrow="Le programme" title="Un rythme doux, jour après jour" />
-          <ol className="mt-10 space-y-4">
-            {retreat.program.map((step, i) => (
-              <Reveal key={step.day} delay={i * 70} as="li">
-                <div className="flex flex-col gap-2 rounded-2xl border border-umber/12 bg-cream p-6 sm:flex-row sm:items-center sm:gap-6">
-                  <span className="font-serif text-lg text-clay sm:w-24 sm:shrink-0">
-                    {step.day}
-                  </span>
-                  <span className="text-ink/75">{step.text}</span>
+          <SectionHeading
+            eyebrow="Les chambres & tarifs"
+            title="Choisissez votre formule"
+          />
+          <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
+            {retreat.rooms.map((room) => (
+              <Reveal key={room.name} as="article">
+                <div className="flex h-full flex-col rounded-2xl border border-umber/12 bg-offwhite p-7">
+                  <h3 className="font-serif text-xl text-umber">{room.name}</h3>
+                  <p className="mt-2 text-sm text-ink/70">{room.description}</p>
+                  <ul className="mt-auto space-y-1.5 pt-5">
+                    {room.prices.map((p) => (
+                      <li
+                        key={p.label}
+                        className="flex items-baseline justify-between border-t border-umber/10 pt-2 text-sm"
+                      >
+                        <span className="text-ink/60">{p.label}</span>
+                        <span className="font-serif text-lg text-umber">{p.price}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </Reveal>
             ))}
-          </ol>
+          </div>
+          {retreat.roomsNote && (
+            <p className="mx-auto mt-6 max-w-2xl text-center text-sm italic text-ink/60">
+              {retreat.roomsNote}
+            </p>
+          )}
         </Container>
       </Section>
 
-      {/* Inclus + Pour qui */}
-      <Section spacing="md" className="bg-cream">
+      {/* Inclus / Non inclus */}
+      <Section spacing="md" className="bg-offwhite">
         <Container>
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-20">
             <Reveal>
@@ -106,7 +237,39 @@ export default function RetreatPage() {
               </ul>
             </Reveal>
             <Reveal delay={120}>
-              <h3 className="font-serif text-2xl text-umber">À qui s&apos;adresse la retraite</h3>
+              <h3 className="font-serif text-2xl text-umber">Non inclus</h3>
+              <ul className="mt-6 space-y-3">
+                {retreat.notIncluded.map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-ink/60">
+                    <span className="mt-1 text-clay">—</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
+          </div>
+        </Container>
+      </Section>
+
+      {/* Infos pratiques + à qui s'adresse */}
+      <Section spacing="md" className="bg-cream">
+        <Container>
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-20">
+            <Reveal>
+              <h3 className="font-serif text-2xl text-umber">Infos pratiques</h3>
+              <ul className="mt-6 space-y-3">
+                {retreat.practicalInfo.map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-ink/75">
+                    <IconClock className="mt-1 h-4 w-4 shrink-0 text-clay" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
+            <Reveal delay={120}>
+              <h3 className="font-serif text-2xl text-umber">
+                À qui s&apos;adresse la retraite
+              </h3>
               <ul className="mt-6 space-y-3">
                 {retreat.audience.map((item) => (
                   <li key={item} className="flex items-start gap-3 text-ink/75">
@@ -120,9 +283,7 @@ export default function RetreatPage() {
         </Container>
       </Section>
 
-      {/* Galerie — tuiles « Photo à venir » tant que les vraies photos ne sont
-          pas fournies (retreatGallery dans data/images.ts), pour visualiser la
-          mise en page sans image cassée. Masquée seulement si le tableau est vide. */}
+      {/* En images */}
       {retreat.gallery.length > 0 && (
         <Section spacing="md" className="bg-offwhite">
           <Container>
@@ -134,7 +295,7 @@ export default function RetreatPage() {
         </Section>
       )}
 
-      {/* FAQ retraite */}
+      {/* FAQ */}
       <Section spacing="md" className="bg-cream">
         <Container>
           <div className="mx-auto max-w-3xl">
@@ -151,11 +312,11 @@ export default function RetreatPage() {
         <Container>
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="font-serif text-3xl text-cream md:text-4xl">
-              Envie de vivre cette parenthèse&nbsp;?
+              Prête à vivre cette parenthèse&nbsp;?
             </h2>
             <p className="mt-4 text-cream/80">
-              Contactez-nous pour recevoir toutes les informations et réserver
-              votre place dès l&apos;ouverture des inscriptions.
+              Écrivez-nous pour recevoir toutes les informations et réserver votre place.
+              Places limitées.
             </p>
             <div className="mt-8 flex justify-center">
               <Button href="/contact" variant="light" size="lg">

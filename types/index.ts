@@ -9,6 +9,22 @@ export type NavLink = {
 
 export type CourseSlug = "tapis-springboard" | "reformer";
 
+/** Un niveau précis d'une discipline (ex: « Reformer Niveau 1 »). */
+export type CourseLevel = {
+  name: string;
+  tagline: string;
+  description: string;
+  capacity: number;
+  /** true = mention « Accessible à tous ». */
+  accessible?: boolean;
+  /** Mention d'ouverture différée (ex: « Ouverture janvier 2027 »). */
+  comingSoon?: string;
+  /** Photo du niveau. Absente tant que le studio n'a pas fourni le visuel
+   *  (affiche alors une tuile « Photo à venir »). */
+  image?: string;
+  imageAlt?: string;
+};
+
 export type Course = {
   slug: CourseSlug;
   name: string;
@@ -22,6 +38,8 @@ export type Course = {
   duration: string;
   image: string;
   imageAlt: string;
+  /** Déclinaisons par niveau (affichées en détail sur la page Les Cours). */
+  levels: CourseLevel[];
 };
 
 export type PricingPlan = {
@@ -57,18 +75,56 @@ export type RetreatStatus =
   | "complet"
   | "liste-attente";
 
+/** Animateur·rice de la retraite (photo optionnelle → placeholder). */
+export type RetreatHost = {
+  name: string;
+  role: string;
+  bio?: string;
+  image?: string;
+  imageAlt?: string;
+  instagram?: string;
+};
+
+/** Type de chambre avec ses tarifs (solo / duo). */
+export type RetreatRoom = {
+  name: string;
+  description: string;
+  prices: { label: string; price: string }[];
+};
+
 export type Retreat = {
   title: string;
+  /** Sous-titre / accroche (ex: "Pilates, Yoga & Surf"). */
+  subtitle?: string;
   location: string;
-  /** Mention libre configurable (ex: "26 – 30 juin 2025") — placeholder tant que non confirmé */
+  /** Mention libre configurable (ex: "Du 11 au 13 septembre 2026"). */
   dates: string;
-  /** Tarif affiché (ex: "À partir de 550 €/personne"). Optionnel. */
+  /** Durée (ex: "3 jours – 2 nuits"). Optionnel. */
+  duration?: string;
+  /** Tarif d'appel affiché (ex: "À partir de 490 €/personne"). Optionnel. */
   price?: string;
   status: RetreatStatus;
   intro: string;
   philosophy: string;
-  program: { day: string; text: string }[];
+  /** Animatrices de la retraite. */
+  hosts: RetreatHost[];
+  /** Liste des activités / pratiques du séjour. */
+  program: string[];
+  /** Informations pratiques (arrivée, départ, minimum de participants…). */
+  practicalInfo: string[];
+  /** Hébergement : description + galerie photos dédiée. */
+  accommodation: {
+    name: string;
+    text: string[];
+    instagram?: string;
+    gallery: GalleryImage[];
+  };
+  /** Types de chambres et leurs tarifs. */
+  rooms: RetreatRoom[];
+  /** Note complémentaire sur les chambres (astérisque). */
+  roomsNote?: string;
   included: string[];
+  notIncluded: string[];
   audience: string[];
   image: string;
   imageAlt: string;

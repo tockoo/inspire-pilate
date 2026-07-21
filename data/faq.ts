@@ -26,9 +26,9 @@ export const faqItems: FaqItem[] = [
   },
   {
     id: "difference",
-    question: "Quelle différence entre Tapis, Springboard et Reformer ?",
+    question: "Quelle différence entre Tapis avec springboard et Reformer ?",
     answer:
-      "Le tapis utilise le poids du corps. Le Springboard est un panneau mural à ressorts offrant assistance et résistance. Le Reformer est un chariot coulissant sur ressorts pour un travail global et fluide.",
+      "Le reformer et le springboard sont deux outils complémentaires qui permettent de travailler le corps de manière différente. Sur le Reformer, le support est mobile : on apprend à contrôler ses mouvements tout en stabilisant son corps. Avec le Springboard, le support est fixe : on se déplace plus librement dans l’espace, aussi bien allongé que debout, ce qui rapproche davantage les exercices des mouvements du quotidien. Pratiquer les deux permet de développer à la fois la précision,le contrôle, l’équilibre, la force et la mobilité. Ils ne s’opposent pas, ils se complètent.",
   },
   {
     id: "carte-fonctionnement",

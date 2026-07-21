@@ -12,8 +12,6 @@ export const pricingPlans: PricingPlan[] = [
     sessions: 3,
     price: 60,
     validity: "Validité 1 mois",
-    featured: true,
-    description: "Idéale pour découvrir le studio et trouver votre pratique.",
   },
   {
     id: "carte-5",

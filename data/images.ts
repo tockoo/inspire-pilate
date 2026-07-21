@@ -41,6 +41,12 @@ export const images = {
     alt: "Professeur de Pilates en action",
   } satisfies Img,
   
+  studio: {
+    src: "/images/studio.jpg",
+    alt: "Studio de Pilates",
+  } satisfies Img,
+  
+  
   studioIntro: {
     src: "/images/studio-intro.jpg",
     alt: "Espace de pratique baigné de lumière naturelle",
@@ -73,7 +79,7 @@ export const images = {
 
   retreatHero: {
     src: "/images/retraite-hero.jpg",
-    alt: "Paysage côtier apaisant pour une retraite bien-être",
+    alt: "Villa côtière apaisante pour une retraite bien-être",
   } satisfies Img,
 
   retreatCard: {
@@ -128,9 +134,17 @@ export const images = {
   // déposer les fichiers dans /public/images/, renseigner "src" et retirer
   // "placeholder" sur chaque entrée.
   retreatGallery: [
-    { src: "/images/retraite-galerie-1.jpg", alt: "Sentier côtier au lever du jour", orientation: "landscape", placeholder: true },
-    { src: "/images/retraite-galerie-2.jpg", alt: "Moment de calme face à la mer", orientation: "portrait", placeholder: true },
-    { src: "/images/retraite-galerie-3.jpg", alt: "Lumière douce sur un intérieur épuré", orientation: "portrait", placeholder: true },
-    { src: "/images/retraite-galerie-4.jpg", alt: "Nature préservée et sérénité", orientation: "landscape", placeholder: true },
+    { src: "/images/retraite-hero.jpg", alt: "Entrée exterieur de la villa alizée au soleil", orientation: "landscape"},
+    { src: "/images/retraite-galerie-2.jpg", alt: "tapis de yoga sur la plage au coucher du soleil", orientation: "portrait"},
+    { src: "/images/retraite-galerie-3.jpg", alt: "intérieur de la villa", orientation: "portrait"},
+    { src: "/images/retraite-galerie-4.jpg", alt: "numéro de la villa alizée", orientation: "portrait"},
+  ],
+
+  // --- Galerie hébergement (Villa Alizée) ---
+  // Emplacements réservés : à remplacer par les vraies photos de la villa.
+  retreatVilla: [
+    { src: "/images/villa-alizee-1.jpg", alt: "Exterieur de la Villa Alizée", orientation: "landscape" },
+    { src: "/images/villa-alizee-2.jpg", alt: "Cuisine ouverte de la Villa Alizée", orientation: "portrait"},
+    { src: "/images/villa-alizee-3.jpg", alt: "salon de la Villa Alizée", orientation: "portrait" },
   ],
 } as const;

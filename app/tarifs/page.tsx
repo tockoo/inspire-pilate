@@ -29,7 +29,7 @@ export default function PricingPage() {
           </>
         }
         intro="Commencez par la formule découverte, puis choisissez la carte adaptée à votre pratique. Aucun engagement mensuel."
-        image={images.studioIntro}
+        image={images.studio}
         size="md"
       />
 
@@ -44,12 +44,7 @@ export default function PricingPage() {
                 className={cn(plan.featured && "md:col-span-2 lg:col-span-1")}
               >
                 <div
-                  className={cn(
-                    "flex h-full flex-col rounded-2xl border p-8 transition-shadow duration-500",
-                    plan.featured
-                      ? "border-wood/40 bg-beige/50 shadow-lg shadow-umber/10"
-                      : "border-umber/12 bg-offwhite hover:shadow-md"
-                  )}
+                  className="flex h-full flex-col rounded-2xl border border-umber/12 bg-offwhite p-8 transition-shadow duration-500 hover:shadow-md"
                 >
                   {plan.featured && (
                     <span className="mb-4 inline-flex w-fit rounded-full bg-umber px-3 py-1 text-[0.6rem] uppercase tracking-widest text-cream">

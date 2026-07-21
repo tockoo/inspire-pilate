@@ -11,41 +11,100 @@ import { images } from "@/data/images";
 export const retreat: Retreat = {
   provisional: false,
 
-  title: "Week-end Yoga, Surf & Pilates",
+  title: "Week-end Pilates, Yoga & Surf",
+  subtitle: "Pilates, Yoga & Surf",
   location: "Saint-Jean-de-Monts, Vendée",
   dates: "Du 11 au 13 septembre 2026",
-  price: "À partir de 550 €/personne",
+  duration: "3 jours – 2 nuits",
+  price: "À partir de 490 €/personne",
   status: "inscriptions-ouvertes",
 
   intro:
-    "Trois jours pour se déposer, entre yoga, Pilates, surf et nature — à deux pas de l'océan, au cœur de la pinède vendéenne.",
+    "Venez vous déposer à nos côtés pour une parenthèse de bien-être entre océan, nature et mouvement.",
   philosophy:
-    "Loin du quotidien, ce week-end invite à ralentir et à se reconnecter à soi. Yoga au réveil, Pilates les pieds dans le sable, surf, balades à vélo et brunchs préparés avec soin : une parenthèse pensée pour vous ressourcer, en petit comité et en pleine nature.",
+    "Pendant 3 jours et 2 nuits, laissez-vous porter par un programme alliant Pilates, yoga, surf, spirothérapie, relaxation et moments de partage, dans un cadre ressourçant à Saint-Jean-de-Monts.",
 
-  // Déroulé indicatif du week-end (à ajuster selon l'organisation finale).
-  program: [
+  // Animatrices du week-end (photos à fournir → placeholder en attendant).
+  hosts: [
     {
-      day: "Vendredi",
-      text: "Arrivée à la Villa Alizée, installation et première séance douce pour se poser.",
+      name: "Sophie Lenoir",
+      role: "Yoga",
+      image: "/images/sophie-lenoir.jpg",
+      imageAlt: "Sophie Lenoir, professeure de yoga",
+      bio: "Sophie guide les séances de yoga postural et respiratoire du week-end, pour délier le corps et apaiser le mental.",
+      imageAlt: "Sophie Lenoir, professeure de yoga",
     },
     {
-      day: "Samedi",
-      text: "Yoga postural et respiratoire au réveil, Pilates sur la plage, 1h30 de surf encadré et balade à vélo entre terre et mer — ponctués de brunchs et de recettes healthy.",
-    },
-    {
-      day: "Dimanche",
-      text: "Séance matinale face à l'océan, dernier moment de partage et départ en douceur.",
+      name: "Dolorès Cabardis",
+      role: "Pilates · Inspire Pilates",
+      image: "/images/dolores-cabardis.jpg",
+      imageAlt: "Dolorès Cabardis, professeure de Pilates",
+      bio: "Danseuse depuis toujours, le mouvement a toujours fait partie de ma vie. Après trois grossesses, dont une IMG et une dépression post-partum, le Pilates a été une véritable reconnexion à mon corps : plus consciente, plus forte, plus alignée.",
+      imageAlt: "Dolorès Cabardis, professeure de Pilates",
     },
   ],
+
+  // Activités incluses dans le week-end.
+  program: [
+    "1 cours de yoga postural",
+    "1 cours de yoga respiratoire",
+    "1 cours de Pilates",
+    "1 cours de spirothérapie",
+    "1h30 de surf encadré par Mojo Surf",
+    "Drainage lymphatique du visage",
+    "Location de vélos",
+    "Tirages d'oracles et cercle d'intention",
+    "1 formule brunch à volonté au restaurant Bec à Vin",
+  ],
+
+  practicalInfo: [
+    "L'arrivée à la maison est prévue vers 17h00 le vendredi 11 septembre, et le départ vers 14h00 le dimanche 13 septembre.",
+    "Nombre minimum de participants pour que la retraite soit maintenue : 6.",
+  ],
+
+  accommodation: {
+    name: "Villa Alizée",
+    text: [
+      "Villa Alizée de 175 m² de plain-pied, à 600 m de la mer au cœur de la pinède montoise : 4 chambres, 1 salle de bain, 1 salle d'eau et 2 WC.",
+      "Déposez vos valises dans cette maison bord de mer propice à la déconnexion.",
+    ],
+    instagram: "https://www.instagram.com/villa_alizee_/",
+    gallery: [...images.retreatVilla],
+  },
+
+  rooms: [
+    {
+      name: "Chambre luxe",
+      description: "Lit double (160 cm) et salle de bain privative.",
+      prices: [
+        { label: "Solo", price: "750 €/pers." },
+        { label: "Duo", price: "590 €/pers." },
+      ],
+    },
+    {
+      name: "Chambre premium",
+      description: "Lit double (140 cm) et salle de bain partagée.",
+      prices: [
+        { label: "Solo", price: "690 €/pers." },
+        { label: "Duo", price: "550 €/pers." },
+      ],
+    },
+    {
+      name: "Chambre confort",
+      description: "2 lits simples et une salle de bain partagée.",
+      prices: [{ label: "Lit simple", price: "490 €/pers." }],
+    },
+  ],
+  roomsNote:
+    "Les chambres luxe et premium peuvent être réservées pour une seule personne, ou pour deux si vous venez accompagné·e.",
 
   included: [
-    "Hébergement à la Villa Alizée, à 600 m de la plage, au cœur de la pinède",
-    "Yoga postural et respiratoire avec Sophie (YODEGA)",
-    "Pilates sur la plage avec Dolorès (Inspire Pilates)",
-    "1h30 de surf encadré par Mojo Surf",
-    "Balades à vélo entre terre et mer",
-    "Brunch au Bec à Vin et recettes healthy tout le week-end",
+    "L'hébergement à la Villa Alizée",
+    "Toutes les pratiques du week-end",
+    "Tous les repas",
   ],
+
+  notIncluded: ["Le transport jusqu'à Saint-Jean-de-Monts"],
 
   audience: [
     "Celles qui souhaitent une vraie parenthèse ressourçante, entre mer et pinède",
@@ -69,13 +128,13 @@ export const retreat: Retreat = {
       id: "r-encadrement",
       question: "Qui encadre le week-end ?",
       answer:
-        "Dolorès pour le Pilates (Inspire Pilates) et Sophie pour le yoga (YODEGA), accompagnées de l'équipe Mojo Surf pour la session de surf.",
+        "Sophie Lenoir pour le yoga et Dolorès Cabardis pour le Pilates (Inspire Pilates), accompagnées de l'équipe Mojo Surf pour la session de surf.",
     },
     {
       id: "r-hebergement",
       question: "Où loge-t-on ?",
       answer:
-        "À la Villa Alizée, une maison bord de mer à 600 m de la plage, au cœur de la pinède, propice à la déconnexion.",
+        "À la Villa Alizée, une maison de 175 m² de plain-pied à 600 m de la plage, au cœur de la pinède montoise, propice à la déconnexion.",
     },
     {
       id: "r-prevoir",
