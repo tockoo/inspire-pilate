@@ -39,7 +39,7 @@ export const retreat: Retreat = {
       role: "Pilates · Inspire Pilates",
       image: "/images/dolores-cabardis.jpg",
       imageAlt: "Dolorès Cabardis, professeure de Pilates",
-      bio: "Danseuse depuis toujours, le mouvement a toujours fait partie de ma vie. Après trois grossesses, dont une IMG et une dépression post-partum, le Pilates a été une véritable reconnexion à mon corps : plus consciente, plus forte, plus alignée.",
+      bio: "Dolorès guide les séances de Pilates avec écoute et bienveillance, pour vous aider à vous reconnecter à votre corps, gagner en force et retrouver un équilibre durable.",
       
     },
   ],
