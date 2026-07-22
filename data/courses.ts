@@ -30,11 +30,11 @@ export const courses: Course[] = [
       },
       {
         title: "Le principe des ressorts",
-        text: "Le Springboard aide la débutante et défie la pratiquante confirmée.",
+        text: "Le Springboard aide les débutant·es et défie les pratiquant·es confirmé·es.",
       },
       {
         title: "Pour qui ?",
-        text: "Accessible à toutes, des fondations jusqu'à la progression.",
+        text: "Accessible à tou·te·s, des fondations jusqu'à la progression.",
       },
     ],
     level: "Fondation & Progression, adaptable",
@@ -58,7 +58,7 @@ export const courses: Course[] = [
         imageAlt: "Cours Pilates tapis et Springboard progression",
         tagline: "Approfondir sa pratique et enrichir son mouvement",
         description:
-          "Destiné aux pratiquantes ayant acquis les bases, ce cours propose un travail plus complet mêlant stabilité, mobilité, coordination et renforcement. L'utilisation du Springboard permet d'explorer une grande variété d'exercices tout en développant davantage de fluidité, de contrôle et d'endurance.",
+          "Destiné aux pratiquant·es ayant acquis les bases, ce cours propose un travail plus complet mêlant stabilité, mobilité, coordination et renforcement. L'utilisation du Springboard permet d'explorer une grande variété d'exercices tout en développant davantage de fluidité, de contrôle et d'endurance.",
         capacity: 8,
       },
     ],
@@ -88,7 +88,7 @@ export const courses: Course[] = [
       },
       {
         title: "Accompagnement",
-        text: "Les réglages s'adaptent à chacune pour une pratique sûre et progressive.",
+        text: "Les réglages s'adaptent à chacun·e pour une pratique sûre et progressive.",
       },
     ],
     level: "Niveaux 1, 2 et mixte",
@@ -102,7 +102,7 @@ export const courses: Course[] = [
         imageAlt: "Cours reformer niveau 1",
         tagline: "Découvrir les fondamentaux du Pilates sur Reformer",
         description:
-          "Ce cours s'adresse aux débutantes ainsi qu'aux personnes souhaitant consolider leurs bases. Vous y développerez la respiration, l'alignement, le contrôle du centre et la compréhension des principes fondamentaux de la méthode Pilates. Le rythme est progressif et les exercices sont expliqués avec précision, pour acquérir les bons repères et pratiquer en toute confiance.",
+          "Ce cours s'adresse aux débutant·es ainsi qu'aux personnes souhaitant consolider leurs bases. Vous y développerez la respiration, l'alignement, le contrôle du centre et la compréhension des principes fondamentaux de la méthode Pilates. Le rythme est progressif et les exercices sont expliqués avec précision, pour acquérir les bons repères et pratiquer en toute confiance.",
         capacity: 6,
         accessible: true,
       },
@@ -112,7 +112,7 @@ export const courses: Course[] = [
         imageAlt: "Cours reformer niveau 1/2",
         tagline: "Approfondir les fondamentaux et gagner en fluidité",
         description:
-          "Destiné aux pratiquantes ayant déjà une première expérience du Reformer, ce cours permet de renforcer les acquis tout en explorant des enchaînements plus fluides et des variations d'exercices. L'accent est mis sur la qualité du mouvement, la coordination et le renforcement global du corps.",
+          "Destiné aux pratiquant·es ayant déjà une première expérience du Reformer, ce cours permet de renforcer les acquis tout en explorant des enchaînements plus fluides et des variations d'exercices. L'accent est mis sur la qualité du mouvement, la coordination et le renforcement global du corps.",
         capacity: 6,
       },
       {
@@ -121,7 +121,7 @@ export const courses: Course[] = [
         imageAlt: "Cours reformer niveau 2",
         tagline: "Développer force, contrôle et endurance",
         description:
-          "Ce cours s'adresse aux pratiquantes maîtrisant les bases de la méthode sur Reformer. Les exercices sont plus exigeants et les transitions plus dynamiques. Le travail de stabilité, de mobilité et de coordination est approfondi afin de développer un corps fort, équilibré et fonctionnel.",
+          "Ce cours s'adresse aux pratiquant·es maîtrisant les bases de la méthode sur Reformer. Les exercices sont plus exigeants et les transitions plus dynamiques. Le travail de stabilité, de mobilité et de coordination est approfondi afin de développer un corps fort, équilibré et fonctionnel.",
         capacity: 6,
       },
       {
@@ -130,7 +130,7 @@ export const courses: Course[] = [
         imageAlt: "Cours reformer niveau 3",
         tagline: "Explorer toute la richesse du répertoire avancé",
         description:
-          "Réservé aux pratiquantes expérimentées, ce cours propose un travail plus complexe et technique. Les exercices avancés du répertoire Pilates demandent une excellente maîtrise des fondamentaux, de la précision, du contrôle et de la fluidité. Le rythme est soutenu et les défis physiques plus importants.",
+          "Réservé aux pratiquant·es expérimenté·es, ce cours propose un travail plus complexe et technique. Les exercices avancés du répertoire Pilates demandent une excellente maîtrise des fondamentaux, de la précision, du contrôle et de la fluidité. Le rythme est soutenu et les défis physiques plus importants.",
         capacity: 6,
         comingSoon: "Ouverture janvier 2027",
       },

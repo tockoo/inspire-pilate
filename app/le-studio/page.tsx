@@ -63,7 +63,7 @@ export default function StudioPage() {
                   Ici, le Pilates se pratique avec attention, précision et douceur.
                 </p>
                 <p>
-                  Nous croyons qu&apos;une pratique régulière, adaptée à chacune,
+                  Nous croyons qu&apos;une pratique régulière, adaptée à chacun·e,
                   transforme durablement la posture, la force et la sérénité au
                   quotidien. L&apos;accompagnement se veut bienveillant et
                   progressif, quel que soit votre point de départ.
@@ -116,7 +116,7 @@ export default function StudioPage() {
             <Reveal>
               <Figure
                 src={images.professeurPilate.src}
-                alt="Dolorès, professeure de Pilates au studio Inspire Pilates"
+                alt="Dolorès, professeur·e de Pilates au studio Inspire Pilates"
                 aspect="aspect-[4/5]"
                 className="shadow-xl shadow-umber/10"
               />
@@ -124,7 +124,7 @@ export default function StudioPage() {
             <Reveal delay={120}>
               <p className="eyebrow mb-4">La professeure</p>
               <h2 className="text-3xl leading-tight text-balance md:text-4xl">
-                Dolorès, <span className="italic">professeure de Pilates.</span>
+                Dolorès, <span className="italic">professeur·e de Pilates.</span>
               </h2>
               <div className="prose-soft mt-6 space-y-4">
                 <p>
@@ -137,7 +137,7 @@ export default function StudioPage() {
                 <p>
                   C&apos;est cette expérience que je transmets aujourd&apos;hui à
                   Vertou&nbsp;: un mouvement juste et bienveillant, à l&apos;écoute de
-                  chacune, où l&apos;on prend soin de soi en profondeur et à son rythme.
+                  chacun·e, où l&apos;on prend soin de soi en profondeur et à son rythme.
                 </p>
               </div>
             </Reveal>

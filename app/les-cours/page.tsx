@@ -29,7 +29,7 @@ export default function CoursesPage() {
             Deux pratiques, une même <span className="italic">exigence de justesse.</span>
           </>
         }
-        intro="Pilates sur tapis avec Springboard et Pilates Reformer : deux disciplines complémentaires, déclinées par niveau pour accompagner chacune, des fondations au répertoire avancé."
+        intro="Pilates sur tapis avec Springboard et Pilates Reformer : deux disciplines complémentaires, déclinées par niveau pour accompagner chacun·e, des fondations au répertoire avancé."
         image={images.courseReformer}
         size="lg"
       />
@@ -114,7 +114,7 @@ export default function CoursesPage() {
                               <div className="mt-4 flex flex-wrap gap-2">
                                 {lvl.accessible && (
                                   <span className="rounded-full bg-beige/70 px-3 py-1 text-xs uppercase tracking-widest text-wood">
-                                    Accessible à tous
+                                    Accessible à tou·te·s
                                   </span>
                                 )}
                                 {lvl.comingSoon && (
@@ -143,7 +143,7 @@ export default function CoursesPage() {
       <FinalCta
         title={
           <>
-            Pas sûre du cours à choisir&nbsp;? <span className="italic">Parlons-en.</span>
+            Pas sûr·e du cours à choisir&nbsp;? <span className="italic">Parlons-en.</span>
           </>
         }
         text="Contactez-nous : nous vous orienterons vers la pratique et le niveau les plus adaptés à vos envies."

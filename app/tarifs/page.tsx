@@ -112,7 +112,7 @@ export default function PricingPage() {
                 </h3>
                 <p className="mt-4 text-sm text-ink/70">
                   La réservation d&apos;un cours est obligatoire pour garantir
-                  votre place, le nombre de participantes étant limité.
+                  votre place, le nombre de participant·es étant limité.
                 </p>
                 <p className="mt-4 text-sm text-ink/70">
                   {pricingInfo.cancellation.text}
@@ -134,7 +134,7 @@ export default function PricingPage() {
       <FinalCta
         title={
           <>
-            Prête à commencer&nbsp;? <span className="italic">Réservez votre place.</span>
+            Prêt·e à commencer&nbsp;? <span className="italic">Réservez votre place.</span>
           </>
         }
       />

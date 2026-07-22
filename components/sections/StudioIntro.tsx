@@ -32,7 +32,7 @@ export function StudioIntro() {
                   Chez Inspire Pilates, nous cultivons un mouvement conscient et
                   précis, dans un cadre apaisant et raffiné. Notre approche allie
                   renforcement, mobilité et équilibre pour vous aider à vous
-                  sentir forte, alignée et sereine au quotidien.
+                  sentir fort·e, aligné·e et serein·e au quotidien.
                 </p>
                 <p>
                   Un lieu intimiste dédié au mouvement, à la force et à la

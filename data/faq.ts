@@ -10,7 +10,7 @@ export const faqItems: FaqItem[] = [
     id: "pratique",
     question: "Faut-il avoir déjà pratiqué le Pilates ?",
     answer:
-      "Non, aucun prérequis n'est nécessaire. Les cours sont adaptables selon le niveau et conviennent aux débutantes comme aux pratiquantes confirmées.",
+      "Non, aucun prérequis n'est nécessaire. Les cours sont adaptables selon le niveau et conviennent aux débutant·es comme aux pratiquant·es confirmé·es.",
   },
   {
     id: "tenue",

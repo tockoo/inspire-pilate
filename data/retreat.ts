@@ -30,7 +30,7 @@ export const retreat: Retreat = {
       name: "Sophie Lenoir",
       role: "Yoga",
       image: "/images/sophie-lenoir.jpg",
-      imageAlt: "Sophie Lenoir, professeure de yoga",
+      imageAlt: "Sophie Lenoir, professeur·e de yoga",
       bio: "Sophie guide les séances de yoga postural et respiratoire du week-end, pour délier le corps et apaiser le mental.",
       
     },
@@ -38,7 +38,7 @@ export const retreat: Retreat = {
       name: "Dolorès Cabardis",
       role: "Pilates · Inspire Pilates",
       image: "/images/dolores-cabardis.jpg",
-      imageAlt: "Dolorès Cabardis, professeure de Pilates",
+      imageAlt: "Dolorès Cabardis, professeur·e de Pilates",
       bio: "Dolorès guide les séances de Pilates avec écoute et bienveillance, pour vous aider à vous reconnecter à votre corps, gagner en force et retrouver un équilibre durable.",
       
     },
@@ -107,8 +107,8 @@ export const retreat: Retreat = {
   notIncluded: ["Le transport jusqu'à Saint-Jean-de-Monts"],
 
   audience: [
-    "Celles qui souhaitent une vraie parenthèse ressourçante, entre mer et pinède",
-    "Débutantes comme pratiquantes régulières : yoga, Pilates et surf accessibles à tous les niveaux",
+    "Celles et ceux qui souhaitent une vraie parenthèse ressourçante, entre mer et pinède",
+    "Débutant·es comme pratiquant·es régulièr·es : yoga, Pilates et surf accessibles à tous les niveaux",
     "Envie de mouvement, de nature et de convivialité",
   ],
 
@@ -122,13 +122,13 @@ export const retreat: Retreat = {
       id: "r-niveau",
       question: "Faut-il déjà pratiquer le yoga, le Pilates ou le surf ?",
       answer:
-        "Non. Les séances sont adaptées à tous les niveaux, et le surf est encadré par des professionnels de Mojo Surf : débutantes bienvenues.",
+        "Non. Les séances sont adaptées à tous les niveaux, et le surf est encadré par des professionnels de Mojo Surf : débutant·es bienvenu·es.",
     },
     {
       id: "r-encadrement",
       question: "Qui encadre le week-end ?",
       answer:
-        "Sophie Lenoir pour le yoga et Dolorès Cabardis pour le Pilates (Inspire Pilates), accompagnées de l'équipe Mojo Surf pour la session de surf.",
+        "Sophie Lenoir pour le yoga et Dolorès Cabardis pour le Pilates (Inspire Pilates), accompagné·es de l'équipe Mojo Surf pour la session de surf.",
     },
     {
       id: "r-hebergement",
