@@ -52,7 +52,7 @@ export function pricePerSession(plan: PricingPlan): number {
 // ⚠️ Contenu provisoire à valider par le studio (notamment l'annulation).
 export const pricingInfo = {
   howItWorks: [
-    "Chaque carte donne accès aux cours sur tapis, Springboard et Reformer.",
+    "Chaque carte donne accès aux cours sur tapis Springboard et Reformer.",
     "Les crédits sont décomptés à chaque cours réservé et honoré.",
     "La réservation d'un cours est obligatoire pour garantir votre place.",
   ],
@@ -60,6 +60,6 @@ export const pricingInfo = {
     "La durée de validité court à partir du premier cours réservé. Passé ce délai, les crédits non utilisés expirent.",
   cancellation: {
     provisional: true,
-    text: "Toute annulation doit être signalée au moins 24 h avant le cours pour être recréditée. Passé ce délai, le cours est décompté. (Conditions provisoires — à valider par le studio.)",
+    text: "Toute annulation doit être signalée au moins 24 h avant le cours pour être recréditée. Passé ce délai, le cours est décompté.",
   },
 };

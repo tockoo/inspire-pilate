@@ -11,7 +11,7 @@ import { images } from "@/data/images";
 export const metadata: Metadata = {
   title: "FAQ",
   description:
-    "Questions fréquentes sur le Pilates à Vertou : niveau requis, tenue, différences entre tapis, Springboard et Reformer, cartes, réservation et annulation.",
+    "Questions fréquentes sur le Pilates à Vertou : niveau requis, tenue, choix des cours, cartes, réservation, annulation, lieu et matériel.",
   alternates: { canonical: "/faq" },
 };
 
@@ -25,7 +25,7 @@ export default function FaqPage() {
             Vos questions, nos <span className="italic">réponses.</span>
           </>
         }
-        intro="Tout ce qu'il faut savoir avant de venir pratiquer chez Inspire Pilates."
+        intro="Les informations pratiques chez Inspire Pilates."
         image={images.reception}
         size="md"
       />

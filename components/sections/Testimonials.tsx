@@ -17,10 +17,10 @@ export function Testimonials() {
       <Container>
         <SectionHeading
           align="center"
-          eyebrow="Elles nous inspirent"
+          eyebrow="Vos mots nous inspirent"
           title={
             <>
-              Vos mots, notre plus belle <span className="italic">motivation.</span>
+              Votre confiance, notre plus belle<span className="italic">motivation.</span>
             </>
           }
         />

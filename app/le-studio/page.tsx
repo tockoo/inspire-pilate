@@ -95,14 +95,14 @@ export default function StudioPage() {
               />
             </Reveal>
             <Reveal delay={120} className="order-1 lg:order-2">
-              <p className="eyebrow mb-4">L&apos;environnement</p>
+              <p className="eyebrow mb-4">L&apos;ambiance</p>
               <h2 className="text-3xl leading-tight text-balance md:text-4xl">
-                Lumière naturelle et matériaux <span className="italic">bruts.</span>
+                Une expérience pensée dans les moindres<span className="italic">détails.</span>
               </h2>
               <p className="prose-soft mt-6">
-                Le studio privilégie les tons naturels, le bois et la lumière du
-                jour. Un cadre apaisant, pensé pour que le corps se détende et que
-                l&apos;esprit se recentre dès l&apos;entrée.
+                Matières naturelles, teintes douces et textures brutes : lin, chêne, chaux, effet béton ciré… 
+                Chaque élément a été choisi avec soin pour créer un lieu à la fois sophistiqué et apaisant,
+                où l’expérience se vit autant dans la qualité de l’enseignement que dans l’atmosphère.
               </p>
             </Reveal>
           </div>

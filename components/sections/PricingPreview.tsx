@@ -22,9 +22,9 @@ export function PricingPreview() {
               <span className="italic">rythme.</span>
             </h2>
             <p className="prose-soft mt-6">
-              Commencez par la formule découverte, puis choisissez la carte qui
-              vous convient. Les crédits sont valables sur l&apos;ensemble des
-              cours&nbsp;: tapis, Springboard et Reformer.
+           Choisissez la formule qui vous correspond le mieux et
+            profitez de vos crédits sur l’ensemble de nos cours 
+            : tapis avec Springboard et Reformer.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <ReserveButton />

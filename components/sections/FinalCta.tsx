@@ -16,10 +16,10 @@ type Props = {
 export function FinalCta({
   title = (
     <>
-      Offrez-vous une parenthèse <span className="italic">pour vous.</span>
+      Offrez-vous une parenthèse pour <span className="italic">bouger, et respirer.</span>
     </>
   ),
-  text = "Découvrez le studio, réservez un premier cours ou contactez-nous : nous serons ravi·es de vous accueillir.",
+  text = "Découvrez le studio, réservez votre premier cours ou contactez-nous : nous serons ravi.es de vous accueillir.",
   image = images.ctaFinal,
 }: Props) {
   return (

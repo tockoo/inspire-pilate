@@ -28,7 +28,7 @@ export default function PricingPage() {
             Des formules simples, à votre <span className="italic">rythme.</span>
           </>
         }
-        intro="Commencez par la formule découverte, puis choisissez la carte adaptée à votre pratique. Aucun engagement mensuel."
+        intro="Choisissez la formule qui correspond à votre pratique, avec laquelle vous pourrez acccéder à tous les cours. Aucun engagement mensuel."
         image={images.studio}
         size="md"
       />
@@ -119,7 +119,7 @@ export default function PricingPage() {
                 </p>
                 {pricingInfo.cancellation.provisional && (
                   <p className="mt-3 text-xs italic text-clay/80">
-                    Conditions provisoires — à valider par le studio.
+                    {/* Conditions provisoires — à valider par le studio. */}
                   </p>
                 )}
                 <div className="mt-8">
