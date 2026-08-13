@@ -44,7 +44,7 @@ export function Header() {
   const transparent = isHome && !scrolled && !open;
 
   const isActive = (href: string) =>
-    href === "/" ? pathname === "/" : pathname.startsWith(href);
+    !!pathname && (href === "/" ? pathname === "/" : pathname.startsWith(href));
 
   return (
     <>
@@ -52,11 +52,21 @@ export function Header() {
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-500 ease-soft",
         transparent
-          ? "bg-transparent py-2.5"
-          : "bg-cream/90 py-2 shadow-[0_1px_0_rgba(92,70,50,0.08)] backdrop-blur-md"
+          ? "bg-transparent"
+          : "bg-cream/90 shadow-[0_1px_0_rgba(92,70,50,0.08)] backdrop-blur-md"
       )}
     >
-      <div className="container-wide flex items-center justify-between">
+      <div className="w-full bg-ink py-2 text-center">
+        <p className="px-4 font-sans text-[10px] font-medium uppercase tracking-[0.25em] text-cream sm:text-[11px]">
+          COMING SOON — OUVERTURE NOVEMBRE 2026
+        </p>
+      </div>
+      <div
+        className={cn(
+          "container-wide flex items-center justify-between",
+          transparent ? "py-2.5" : "py-2"
+        )}
+      >
         <Logo tone={transparent ? "light" : "dark"} compact />
 
         {/* Navigation desktop */}

@@ -32,8 +32,8 @@ export function Hero() {
             <span className="italic">équilibre</span>
           </h1>
           <p className="mt-6 max-w-md text-base text-cream/85 md:text-lg">
-            Cours collectifs sur tapis, Springboard et Reformer, dans un lieu
-            intimiste et chaleureux à Vertou.
+            Cours collectifs sur tapis avec Springboard et Reformer,
+             dans un lieu intimiste et chaleureux à Vertou.
           </p>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
             <ReserveButton size="lg" />

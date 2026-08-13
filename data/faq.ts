@@ -10,32 +10,25 @@ export const faqItems: FaqItem[] = [
     id: "pratique",
     question: "Faut-il avoir déjà pratiqué le Pilates ?",
     answer:
-      "Non, aucun prérequis n'est nécessaire. Les cours sont adaptables selon le niveau et conviennent aux débutant·es comme aux pratiquant·es confirmé·es.",
+      "Non, aucun prérequis n'est nécessaire. Les cours sont adaptés à tous les niveaux. Venez comme vous êtes !",
   },
   {
     id: "tenue",
     question: "Quelle tenue prévoir ?",
     answer:
-      "Une tenue souple et confortable dans laquelle vous vous sentez à l'aise pour bouger. Le Pilates se pratique généralement pieds nus ou en chaussettes antidérapantes.",
+      "Une tenue souple et confortable dans laquelle vous vous sentez à l'aise pour bouger. Chez Inspire Pilates, nous privilégions une pratique du Pilates pieds nus.",
   },
   {
     id: "choix-cours",
     question: "Comment choisir son cours ?",
     answer:
-      "Le tapis est idéal pour débuter et travailler en profondeur. Le Springboard et le Reformer ajoutent la dimension des ressorts. En cas de doute, contactez le studio : nous vous orienterons.",
-  },
-  {
-    id: "difference",
-    question: "Quelle différence entre Tapis avec springboard et Reformer ?",
-    answer:
-      "Le reformer et le springboard sont deux outils complémentaires qui permettent de travailler le corps de manière différente. Sur le Reformer, le support est mobile : on apprend à contrôler ses mouvements tout en stabilisant son corps. Avec le Springboard, le support est fixe : on se déplace plus librement dans l’espace, aussi bien allongé que debout, ce qui rapproche davantage les exercices des mouvements du quotidien. Pratiquer les deux permet de développer à la fois la précision,le contrôle, l’équilibre, la force et la mobilité. Ils ne s’opposent pas, ils se complètent.",
+      "Le Tapis Springboard et le Reformer offrent chacun un accompagnement précieux pour développer les principes de contrôle, de précision et de fluidité. La résistance des ressorts accompagne le corps et enrichit la pratique.\n\nComplémentaires, ils invitent chacun·e à explorer le mouvement autrement. L’idéal ? Les découvrir tous !",
   },
   {
     id: "carte-fonctionnement",
-    question: "Comment fonctionne une carte ?",
+    question: "Comment fonctionne ma carte de cours ?",
     answer:
-      "Une carte correspond à un nombre de cours prépayés, utilisables sur tapis, Springboard ou Reformer. Un crédit est décompté à chaque cours réservé et honoré.",
-    provisional: true,
+      "Une carte correspond à un nombre de cours prépayés, utilisables sur Tapis Springboard ou Reformer.\n\nUne fois votre carte achetée, vous accédez au planning en ligne et pouvez réserver librement les créneaux de votre choix. Un crédit est décompté à chaque réservation.",
   },
   {
     id: "validite",
@@ -48,27 +41,24 @@ export const faqItems: FaqItem[] = [
     id: "reserver",
     question: "Comment réserver un cours ?",
     answer:
-      "En phase actuelle, la réservation se fait en nous contactant directement (téléphone, WhatsApp ou Instagram). Un système de réservation en ligne sera bientôt disponible.",
-    provisional: true,
+      "La plateforme de réservation en ligne sera disponible dans les prochains jours.\n\nVous pourrez ainsi accéder à votre compte client, consulter le planning et réserver librement les créneaux de votre choix chaque semaine.",
   },
   {
     id: "annulation",
     question: "Que se passe-t-il en cas d'annulation ?",
     answer:
-      "Une annulation signalée suffisamment à l'avance permet de récupérer le crédit. Les conditions précises seront confirmées par le studio.",
-    provisional: true,
+      "Toute annulation effectuée plus de 24 heures avant le début du cours permet de récupérer automatiquement le crédit sur votre carte.\n\nEn revanche, pour toute annulation effectuée moins de 24 heures à l’avance, le crédit est définitivement décompté et ne pourra pas être recrédité.",
   },
   {
     id: "lieu",
     question: "Où se trouve le studio ?",
     answer:
-      "Le studio est situé Chemin Victor Forquenot, 44120 Vertou, au sud de Nantes. Un lien d'itinéraire est disponible sur la page Contact.",
+      "Le studio est situé Chemin Victor Forquenot, 44120 Vertou, à deux pas de la gare de Vertou, facilement accessible depuis la route de Clisson.\n\nLe chemin Victor Forquenot étant piétonnier, vous pouvez stationner gratuitement sur le parking de la gare, à seulement 2 minutes à pied du studio.\n\nLes vélos peuvent également être stationnés à l’entrée du studio.\n\nUn lien d’itinéraire est disponible sur notre page Contact.",
   },
   {
     id: "materiel",
     question: "Faut-il apporter du matériel ?",
     answer:
-      "Non, tout le matériel est fourni sur place. Vous pouvez apporter votre serviette et une bouteille d'eau si vous le souhaitez.",
-    provisional: true,
+      "Non, tout le matériel nécessaire à votre pratique est mis à votre disposition au studio.\n\nDes espaces sont également prévus pour vous changer avant ou après le cours. Pensez simplement à apporter une tenue confortable et, si vous le souhaitez, une gourde.",
   },
 ];
