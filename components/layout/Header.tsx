@@ -6,9 +6,13 @@ import { usePathname } from "next/navigation";
 
 import { Logo } from "@/components/ui/Logo";
 import { ReserveButton } from "@/components/ui/ReserveButton";
+import { Button } from "@/components/ui/Button";
 import { IconMenu, IconClose } from "@/components/ui/icons";
 import { mainNav } from "@/config/site";
 import { cn } from "@/lib/utils";
+
+// Espace client hébergé sur un sous-domaine dédié (déployé séparément).
+const ACCOUNT_URL = "https://moncompte.inspirepilates.fr";
 
 export function Header() {
   const pathname = usePathname();
@@ -95,6 +99,17 @@ export function Header() {
 
         <div className="flex items-center gap-3">
           <div className="hidden sm:block">
+            <Button
+              href={ACCOUNT_URL}
+              external
+              size="sm"
+              variant={transparent ? "light" : "primary"}
+              className="px-3.5 py-1.5 text-[0.6rem]"
+            >
+              Mon compte
+            </Button>
+          </div>
+          <div className="hidden sm:block">
             <ReserveButton
               size="sm"
               variant={transparent ? "light" : "primary"}
@@ -143,8 +158,17 @@ export function Header() {
             </Link>
           ))}
         </nav>
-        <div className="mt-8">
+        <div className="mt-8 flex flex-col gap-3">
           <ReserveButton size="lg" className="w-full" />
+          <Button
+            href={ACCOUNT_URL}
+            external
+            size="lg"
+            variant="secondary"
+            className="w-full"
+          >
+            Mon compte
+          </Button>
         </div>
       </div>
     </>
