@@ -5,75 +5,84 @@ import { Section, Container } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Figure } from "@/components/ui/Figure";
 import { Reveal } from "@/components/ui/Reveal";
-// Ré-importer Gallery et Button en réactivant la section « Galerie » ci-dessous.
-import { PracticalInfo } from "@/components/sections/PracticalInfo";
 import { FinalCta } from "@/components/sections/FinalCta";
 import { images } from "@/data/images";
 
 export const metadata: Metadata = {
   title: "À propos",
   description:
-    "Découvrez Inspire Pilates à Vertou : un studio intimiste et chaleureux baigné de lumière naturelle, dédié au mouvement, à la force et à la mobilité.",
+    "Dolorès Cabardis, fondatrice et professeure d'Inspire Pilates à Vertou : son parcours, sa vision du Pilates et ses formations.",
   alternates: { canonical: "/a-propos" },
 };
 
-const spaces = [
+const vision = [
+  "Parce que je crois que l'on ne choisit pas seulement un endroit pour ce qu'on y fait, mais aussi pour ce que l'on y ressent. Comme lorsque l'on pousse la porte d'un restaurant que l'on aime : on vient pour la cuisine, bien sûr, mais aussi pour l'atmosphère, la décoration, l'accueil, le service et le plaisir d'y être.",
+  "J'ai cette même ambition pour Inspire Pilates. Que la qualité de l'enseignement soit au rendez-vous, mais aussi que l'on ait plaisir à franchir la porte, à retrouver un lieu que l'on connaît, à être accueilli, à prendre le temps. Que chaque séance soit une parenthèse, une expérience qui commence dès l'arrivée au studio et se prolonge bien après le dernier mouvement.",
+];
+
+const parcours = [
+  "Avant Inspire Pilates, il y a dix années passées dans le commerce, comme responsable commerciale pour des marques alimentaires et cosmétiques bio. Une expérience qui m'a appris le goût du contact, de l'écoute, de la relation de proximité et surtout l'importance de créer une vraie relation de confiance.",
+  "Puis est venue l'envie d'entreprendre. L'envie de créer quelque chose qui ait du sens et qui rassemble plusieurs de mes convictions : le sport-santé, le bien-être, la proximité et le commerce local.",
+  "Cette envie d'entreprendre est aussi une histoire familiale. Fille d'un épicier ambulant qui a sillonné pendant près de vingt ans les routes de Loire-Atlantique et de Vendée, j'ai grandi dans le commerce. J'en ai gardé le goût du lien, du contact et de l'échange. Je revendique aujourd'hui une véritable âme de commerçante : celle qui aime connaître ses clients, les accueillir, les retrouver et faire d'un lieu bien plus qu'un simple point de passage.",
+  "Avec Inspire Pilates, j'ai choisi de faire évoluer cette histoire vers un univers qui me ressemble aujourd'hui davantage : celui du mouvement, de la santé et du bien-être.",
+];
+
+const piliers = [
   {
-    title: "L'espace tapis",
-    text: "Une salle épurée et lumineuse pour la pratique au sol, propice à la concentration et à la respiration.",
+    title: "Plus qu'un cours, une expérience",
+    paras: [
+      "J'ai imaginé Inspire Pilates comme un lieu chaleureux, intimiste et profondément humain, où chaque détail compte. Un lieu où l'on vient pour la qualité de l'enseignement, mais aussi pour l'atmosphère, les détails, l'accueil et cette sensation de s'offrir un vrai moment pour soi.",
+    ],
   },
   {
-    title: "L'espace appareils",
-    text: "Reformers et Springboard installés dans un cadre soigné, pour un travail précis et accompagné.",
-  },
-  {
-    title: "L'accueil",
-    text: "Un lieu chaleureux, pensé dans des matériaux naturels, pour se poser avant et après la séance.",
+    title: "Une vision du Pilates avant tout humaine",
+    paras: [
+      "Fondatrice et unique professeure du studio, je souhaite placer l'humain au cœur du projet.",
+      "Pour moi, le Pilates est un formidable outil de sport-santé et de renforcement musculaire, mais il est aussi une manière d'apprendre à mieux connaître son corps, à l'écouter et à en prendre soin durablement.",
+      "Ici, pas de recherche de performance à tout prix. Je souhaite proposer une pratique précise, progressive et accessible, dans laquelle chaque personne peut évoluer à son rythme et selon son propre corps.",
+    ],
   },
 ];
 
-export default function StudioPage() {
+const formations = [
+  "Titulaire du CQP ALS AGEE depuis juillet 2026, je suis également formée au Pilates niveau 2 au Centre Pilates Nantes, sur tapis, Reformer et Cadillac.",
+  "Et parce que je considère que l'apprentissage d'une professeure ne s'arrête jamais, je poursuis mon parcours auprès d'Élodie Scullino, fondatrice de la méthode des 5 Sens, à Paris. Continuer à apprendre, à évoluer et à rester curieuse, pour accompagner au mieux les corps qui me sont confiés et rester, moi aussi, dans le mouvement d'une vie qui change à mille à l'heure.",
+];
+
+export default function AProposPage() {
   return (
     <>
       <PageHero
         eyebrow="À propos"
         title={
           <>
-            Un lieu intimiste, pensé pour le <span className="italic">mouvement.</span>
+            Dolorès Cabardis, <span className="italic">fondatrice.</span>
           </>
         }
-        intro="À Vertou, Inspire Pilates cultive une atmosphère calme et chaleureuse, où chaque détail invite à ralentir."
-        image={images.studioHero}
+        intro="Fondatrice et professeure de Pilates — j'ai créé Inspire Pilates avec l'envie de proposer bien plus qu'un cours de Pilates."
+        image={images.professeurPilate}
         size="lg"
       />
 
-      {/* Philosophie / intention */}
+      {/* Son parcours */}
       <Section spacing="lg" className="bg-cream">
         <Container>
-          <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-20">
+          <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
             <Reveal>
-              <p className="eyebrow mb-4">Notre philosophie</p>
+              <p className="eyebrow mb-4">Son parcours</p>
               <h2 className="text-3xl leading-tight text-balance md:text-4xl">
-                Le bien-être naît d&apos;un mouvement <span className="italic">conscient.</span>
+                Une âme de <span className="italic">commerçante.</span>
               </h2>
               <div className="prose-soft mt-6 space-y-4">
-                <p>
-                  Inspire Pilates est né d&apos;une envie simple&nbsp;: offrir un
-                  espace où l&apos;on prend soin de soi, loin de l&apos;agitation.
-                  Ici, le Pilates se pratique avec attention, précision et douceur.
-                </p>
-                <p>
-                  Nous croyons qu&apos;une pratique régulière, adaptée à chacun·e,
-                  transforme durablement la posture, la force et la sérénité au
-                  quotidien. L&apos;accompagnement se veut bienveillant et
-                  progressif, quel que soit votre point de départ.
-                </p>
+                {parcours.map((p) => (
+                  <p key={p.slice(0, 24)}>{p}</p>
+                ))}
               </div>
             </Reveal>
             <Reveal delay={120}>
               <Figure
-                src={images.reception.src}
-                alt={images.reception.alt}
+                src={images.dolores.src}
+                alt={images.dolores.alt}
                 aspect="aspect-[4/5]"
                 className="shadow-xl shadow-umber/10"
               />
@@ -82,82 +91,39 @@ export default function StudioPage() {
         </Container>
       </Section>
 
-      {/* Environnement / lumière */}
+      {/* Sa vision — bloc resserré, sous le parcours */}
       <Section spacing="md" className="bg-offwhite">
         <Container>
-          <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-20">
-            <Reveal className="order-2 lg:order-1">
-              <Figure
-                src={images.studioIntro.src}
-                alt={images.studioIntro.alt}
-                aspect="aspect-[3/2]"
-                className="shadow-lg shadow-umber/10"
-              />
-            </Reveal>
-            <Reveal delay={120} className="order-1 lg:order-2">
-              <p className="eyebrow mb-4">L&apos;ambiance</p>
-              <h2 className="text-3xl leading-tight text-balance md:text-4xl">
-                Une expérience pensée dans les moindres<span className="italic">détails.</span>
-              </h2>
-              <p className="prose-soft mt-6">
-                Matières naturelles, teintes douces et textures brutes : lin, chêne, chaux, effet béton ciré… 
-                Chaque élément a été choisi avec soin pour créer un lieu à la fois sophistiqué et apaisant,
-                où l’expérience se vit autant dans la qualité de l’enseignement que dans l’atmosphère.
-              </p>
-            </Reveal>
-          </div>
-        </Container>
-      </Section>
-
-      {/* La professeure */}
-      <Section spacing="lg" className="bg-cream">
-        <Container>
-          <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-20">
+          <div className="mx-auto max-w-xl text-center">
             <Reveal>
-              <Figure
-                src={images.professeurPilate.src}
-                alt="Dolorès, professeur·e de Pilates au studio Inspire Pilates"
-                aspect="aspect-[4/5]"
-                className="shadow-xl shadow-umber/10"
-              />
-            </Reveal>
-            <Reveal delay={120}>
-              <p className="eyebrow mb-4">La professeure</p>
-              <h2 className="text-3xl leading-tight text-balance md:text-4xl">
-                Dolorès, <span className="italic">professeur·e de Pilates.</span>
+              <p className="eyebrow mb-4">Sa vision</p>
+              <h2 className="text-2xl leading-tight text-balance md:text-3xl">
+                Un lieu que l&apos;on choisit aussi pour ce que l&apos;on y{" "}
+                <span className="italic">ressent.</span>
               </h2>
               <div className="prose-soft mt-6 space-y-4">
-                <p>
-                  Danseuse depuis toujours, le mouvement a toujours fait partie de ma
-                  vie. C&apos;est en traversant la maternité et une période personnelle
-                  plus difficile que le Pilates est devenu bien plus qu&apos;une
-                  pratique&nbsp;: une véritable reconnexion à mon corps : plus
-                  consciente, plus forte, plus alignée.
-                </p>
-                <p>
-                  C&apos;est cette expérience que je transmets aujourd&apos;hui à
-                  Vertou&nbsp;: un mouvement juste et bienveillant, à l&apos;écoute de
-                  chacun·e, où l&apos;on prend soin de soi en profondeur et à son rythme.
-                </p>
+                {vision.map((p) => (
+                  <p key={p.slice(0, 24)}>{p}</p>
+                ))}
               </div>
             </Reveal>
           </div>
         </Container>
       </Section>
 
-      {/* Les espaces */}
+      {/* Piliers */}
       <Section spacing="md" className="bg-cream">
         <Container>
-          <SectionHeading
-            eyebrow="Les espaces"
-            title="Des lieux pensés pour chaque pratique"
-          />
-          <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
-            {spaces.map((s, i) => (
-              <Reveal key={s.title} delay={i * 100} as="article">
-                <div className="h-full rounded-2xl border border-umber/12 bg-offwhite p-7">
-                  <h3 className="font-serif text-xl text-umber">{s.title}</h3>
-                  <p className="mt-3 text-sm text-ink/70">{s.text}</p>
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+            {piliers.map((p, i) => (
+              <Reveal key={p.title} delay={i * 120} as="article">
+                <div className="flex h-full flex-col rounded-2xl border border-umber/12 bg-offwhite p-8">
+                  <h3 className="font-serif text-2xl text-umber">{p.title}</h3>
+                  <div className="prose-soft mt-4 space-y-3 text-sm">
+                    {p.paras.map((para) => (
+                      <p key={para.slice(0, 24)}>{para}</p>
+                    ))}
+                  </div>
                 </div>
               </Reveal>
             ))}
@@ -165,26 +131,23 @@ export default function StudioPage() {
         </Container>
       </Section>
 
-      {/* Galerie 
+      {/* Formation */}
       <Section spacing="md" className="bg-offwhite">
         <Container>
-          <SectionHeading
-            eyebrow="Galerie"
-            title="Un aperçu du studio"
-            intro="Photographies à remplacer par les véritables images du studio."
-          />
-          <div className="mt-10">
-            <Gallery images={images.gallery} />
-          </div>
-          <div className="mt-10">
-            <Button href="/les-cours" variant="secondary">
-              Découvrir les cours
-            </Button>
+          <div className="mx-auto max-w-2xl">
+            <SectionHeading
+              eyebrow="Formation"
+              title="Un apprentissage qui ne s'arrête jamais"
+            />
+            <div className="prose-soft mt-8 space-y-4">
+              {formations.map((p) => (
+                <p key={p.slice(0, 24)}>{p}</p>
+              ))}
+            </div>
           </div>
         </Container>
-      </Section> */}
+      </Section>
 
-      <PracticalInfo withHeading />
       <FinalCta />
     </>
   );

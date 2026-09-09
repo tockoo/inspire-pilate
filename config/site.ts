@@ -112,6 +112,7 @@ export const mapsEmbedUrl = `https://www.google.com/maps?q=${encodeURIComponent(
 // --- Navigation principale (Phase 1) ---
 export const mainNav: NavLink[] = [
   { label: "Accueil", href: "/" },
+  { label: "Le Studio", href: "/le-studio" },
   { label: "À propos", href: "/a-propos" },
   { label: "Les Cours", href: "/les-cours" },
   { label: "Planning", href: "/planning" },
@@ -122,6 +123,7 @@ export const mainNav: NavLink[] = [
 // --- Navigation du footer ---
 export const footerNav: NavLink[] = [
   { label: "Accueil", href: "/" },
+  { label: "Le Studio", href: "/le-studio" },
   { label: "À propos", href: "/a-propos" },
   { label: "Les Cours", href: "/les-cours" },
   { label: "Planning", href: "/planning" },

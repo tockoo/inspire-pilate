@@ -40,6 +40,11 @@ export const images = {
     src: "/images/professeur-pilate.jpg",
     alt: "Professeur de Pilates en action",
   } satisfies Img,
+
+  dolores: {
+    src: "/images/Dolores.jpg",
+    alt: "Dolorès Cabardis, fondatrice et professeure d'Inspire Pilates",
+  } satisfies Img,
   
   studio: {
     src: "/images/studio.jpg",

@@ -4,15 +4,13 @@ import { Reveal } from "@/components/ui/Reveal";
 import { Button } from "@/components/ui/Button";
 import { images } from "@/data/images";
 
-const pillars = [
-  { title: "Renforcement en profondeur", text: "Un travail du centre qui soutient tout le corps." },
-  { title: "Posture & alignement", text: "Des mouvements précis pour se tenir mieux au quotidien." },
-  { title: "Mobilité & fluidité", text: "Gagner en amplitude et en aisance dans le geste." },
-  { title: "Bien-être durable", text: "Une pratique douce, progressive et régulière." },
+const intro = [
+  "J'ai créé Inspire Pilates avec l'envie de proposer bien plus qu'un cours de Pilates. Parce que je crois que l'on ne choisit pas seulement un endroit pour ce qu'on y fait, mais aussi pour ce que l'on y ressent. Comme lorsque l'on pousse la porte d'un restaurant que l'on aime : on vient pour la cuisine, bien sûr, mais aussi pour l'atmosphère, la décoration, l'accueil, le service et le plaisir d'y être.",
+  "J'ai cette même ambition pour Inspire Pilates. Que la qualité de l'enseignement soit au rendez-vous, mais aussi que l'on ait plaisir à franchir la porte, à retrouver un lieu que l'on connaît, à être accueilli, à prendre le temps. Que chaque séance soit une parenthèse, une expérience qui commence dès l'arrivée au studio et se prolonge bien après le dernier mouvement.",
 ];
 
 /**
- * Présentation éditoriale du studio : texte + piliers + grande photo.
+ * Présentation éditoriale du studio par sa fondatrice : texte + grande photo.
  */
 export function StudioIntro() {
   return (
@@ -22,41 +20,24 @@ export function StudioIntro() {
           {/* Colonne texte */}
           <div>
             <Reveal>
-              <p className="eyebrow mb-4">Inspire Pilates</p>
+              <p className="eyebrow mb-4">La fondatrice</p>
               <h2 className="text-3xl leading-tight text-balance md:text-4xl lg:text-[2.75rem]">
-                Le Pilates, pour renforcer{" "}
-                <span className="italic">corps &amp; esprit.</span>
+                Dolorès Cabardis
               </h2>
+              <p className="mt-2 font-serif text-lg italic text-clay">
+                Fondatrice &amp; professeure de Pilates
+              </p>
               <div className="prose-soft mt-6 space-y-4">
-                <p>
-                  Chez Inspire Pilates, nous cultivons un mouvement conscient et
-                  précis, dans un cadre apaisant et raffiné. Notre approche allie
-                  renforcement, mobilité et équilibre pour vous aider à vous
-                  sentir fort·e, aligné·e et serein·e au quotidien.
-                </p>
-                <p>
-                  Un lieu intimiste dédié au mouvement, à la force et à la
-                  mobilité, avec un accompagnement adapté à chaque niveau.
-                </p>
+                {intro.map((p) => (
+                  <p key={p.slice(0, 24)}>{p}</p>
+                ))}
               </div>
               <div className="mt-8">
                 <Button href="/a-propos" variant="secondary">
-                  En savoir plus sur le studio
+                  Lire son parcours
                 </Button>
               </div>
             </Reveal>
-
-            {/* Piliers */}
-            <div className="mt-12 grid grid-cols-2 gap-6">
-              {pillars.map((p, i) => (
-                <Reveal key={p.title} delay={i * 80} as="div">
-                  <div className="border-t border-umber/15 pt-4">
-                    <h3 className="font-serif text-base text-umber">{p.title}</h3>
-                    <p className="mt-1 text-sm text-ink/65">{p.text}</p>
-                  </div>
-                </Reveal>
-              ))}
-            </div>
           </div>
 
           {/* Colonne image */}

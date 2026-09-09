@@ -67,13 +67,6 @@ const nextConfig = {
       },
     ];
   },
-  async redirects() {
-    return [
-      // « Le Studio » renommée « À propos » : on préserve l'ancienne URL
-      // (déjà connue de Google / d'éventuels liens) via une redirection permanente.
-      { source: "/le-studio", destination: "/a-propos", permanent: true },
-    ];
-  },
 };
 
 export default nextConfig;
