@@ -37,7 +37,7 @@ export function Hero() {
           </p>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
             <ReserveButton size="lg" />
-            <Button href="/le-studio" variant="light" size="lg">
+            <Button href="/a-propos" variant="light" size="lg">
               Découvrir le studio
             </Button>
           </div>

@@ -13,21 +13,31 @@ const isDev = process.env.NODE_ENV === "development";
 // prévu en Phase 2, où le middleware Supabase rendra l'approche naturelle.
 // 'unsafe-eval' n'est activé qu'en développement (React Fast Refresh).
 // ==========================================================================
+// En développement, l'admin TinaCMS est servi par Vite sur http://localhost:4001
+// (module scripts + HMR websocket). On l'autorise UNIQUEMENT en dev — la CSP de
+// production reste stricte ('self').
+const tinaDev = isDev ? " http://localhost:4001" : "";
+
 const csp = [
   "default-src 'self'",
   "base-uri 'self'",
   "object-src 'none'",
   "frame-ancestors 'none'",
   "form-action 'self'",
-  "img-src 'self' data: blob:",
-  "font-src 'self' data:",
+  `img-src 'self' data: blob:${isDev ? " http://localhost:4001 https:" : ""}`,
+  `font-src 'self' data:${tinaDev}`,
   "style-src 'self' 'unsafe-inline'",
-  `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""}`,
-  "connect-src 'self'",
+  `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""}${tinaDev}`,
+  // En dev, l'admin Tina contacte aussi ses services externes (API Tina,
+  // vérification de version, analytics) → on autorise https en dev seulement.
+  `connect-src 'self'${isDev ? " http://localhost:4001 ws://localhost:4001 https: wss:" : ""}`,
   // Carte Google Maps (embed). www.google.com peut rediriger vers maps.google.com.
   "frame-src https://www.google.com https://maps.google.com",
-  "upgrade-insecure-requests",
-].join("; ");
+  // upgrade-insecure-requests uniquement en prod (inutile/gênant en http local).
+  isDev ? null : "upgrade-insecure-requests",
+]
+  .filter(Boolean)
+  .join("; ");
 
 const securityHeaders = [
   { key: "Content-Security-Policy", value: csp },
@@ -55,6 +65,13 @@ const nextConfig = {
         source: "/:path*",
         headers: securityHeaders,
       },
+    ];
+  },
+  async redirects() {
+    return [
+      // « Le Studio » renommée « À propos » : on préserve l'ancienne URL
+      // (déjà connue de Google / d'éventuels liens) via une redirection permanente.
+      { source: "/le-studio", destination: "/a-propos", permanent: true },
     ];
   },
 };

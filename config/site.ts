@@ -112,21 +112,20 @@ export const mapsEmbedUrl = `https://www.google.com/maps?q=${encodeURIComponent(
 // --- Navigation principale (Phase 1) ---
 export const mainNav: NavLink[] = [
   { label: "Accueil", href: "/" },
-  { label: "Le Studio", href: "/le-studio" },
+  { label: "À propos", href: "/a-propos" },
   { label: "Les Cours", href: "/les-cours" },
+  { label: "Planning", href: "/planning" },
   { label: "Tarifs", href: "/tarifs" },
-  { label: "Retraite", href: "/retraite" },
-  { label: "FAQ", href: "/faq" },
   { label: "Contact", href: "/contact" },
 ];
 
 // --- Navigation du footer ---
 export const footerNav: NavLink[] = [
   { label: "Accueil", href: "/" },
-  { label: "Le Studio", href: "/le-studio" },
+  { label: "À propos", href: "/a-propos" },
   { label: "Les Cours", href: "/les-cours" },
+  { label: "Planning", href: "/planning" },
   { label: "Tarifs", href: "/tarifs" },
-  { label: "Retraite", href: "/retraite" },
   { label: "FAQ", href: "/faq" },
   { label: "Contact", href: "/contact" },
 ];
@@ -134,7 +133,7 @@ export const footerNav: NavLink[] = [
 export const legalNav: NavLink[] = [
   { label: "Mentions légales", href: "/mentions-legales" },
   { label: "Politique de confidentialité", href: "/politique-de-confidentialite" },
-  { label: "CGV", href: "/cgv" },
+  { label: "CGV / CGU", href: "/cgv" },
 ];
 
 // --- Routes réservées à la Phase 2 (non affichées dans la navigation) ---

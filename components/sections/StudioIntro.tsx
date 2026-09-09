@@ -40,7 +40,7 @@ export function StudioIntro() {
                 </p>
               </div>
               <div className="mt-8">
-                <Button href="/le-studio" variant="secondary">
+                <Button href="/a-propos" variant="secondary">
                   En savoir plus sur le studio
                 </Button>
               </div>

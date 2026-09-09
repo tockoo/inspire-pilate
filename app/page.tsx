@@ -1,7 +1,8 @@
 import { Hero } from "@/components/sections/Hero";
 import { StudioIntro } from "@/components/sections/StudioIntro";
 import { CoursesOverview } from "@/components/sections/CoursesOverview";
-import { RetreatHighlight } from "@/components/sections/RetreatHighlight";
+// [Masqué] Retraite plus d'actualité — bloc conservé pour réactivation.
+// import { RetreatHighlight } from "@/components/sections/RetreatHighlight";
 import { PricingPreview } from "@/components/sections/PricingPreview";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { PracticalInfo } from "@/components/sections/PracticalInfo";
@@ -13,7 +14,7 @@ export default function HomePage() {
       <Hero />
       <StudioIntro />
       <CoursesOverview />
-      <RetreatHighlight />
+      {/* [Masqué] <RetreatHighlight /> — retraite plus d'actualité */}
       <PricingPreview />
       <Testimonials />
       <PracticalInfo />

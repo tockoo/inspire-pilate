@@ -7,8 +7,8 @@ import { usePathname } from "next/navigation";
 import { Logo } from "@/components/ui/Logo";
 import { ReserveButton } from "@/components/ui/ReserveButton";
 import { Button } from "@/components/ui/Button";
-import { IconMenu, IconClose } from "@/components/ui/icons";
-import { mainNav } from "@/config/site";
+import { IconMenu, IconClose, IconInstagram } from "@/components/ui/icons";
+import { mainNav, siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 
 // Espace client hébergé sur un sous-domaine dédié (déployé séparément).
@@ -116,6 +116,20 @@ export function Header() {
               className="px-3.5 py-1.5 text-[0.6rem]"
             />
           </div>
+          <a
+            href={siteConfig.social.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram Inspire Pilates"
+            className={cn(
+              "hidden h-9 w-9 items-center justify-center rounded-full border transition-colors duration-300 sm:inline-flex",
+              transparent
+                ? "border-cream/60 text-cream hover:bg-cream hover:text-umber"
+                : "border-umber/30 text-umber hover:bg-umber hover:text-cream"
+            )}
+          >
+            <IconInstagram className="h-4 w-4" />
+          </a>
 
           {/* Bouton menu mobile */}
           <button
@@ -169,6 +183,15 @@ export function Header() {
           >
             Mon compte
           </Button>
+          <a
+            href={siteConfig.social.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-2 inline-flex items-center justify-center gap-2 py-2 text-sm uppercase tracking-widest text-umber"
+          >
+            <IconInstagram className="h-4 w-4" />
+            {siteConfig.social.instagramHandle}
+          </a>
         </div>
       </div>
     </>

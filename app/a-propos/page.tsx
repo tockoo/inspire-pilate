@@ -11,10 +11,10 @@ import { FinalCta } from "@/components/sections/FinalCta";
 import { images } from "@/data/images";
 
 export const metadata: Metadata = {
-  title: "Le Studio",
+  title: "À propos",
   description:
     "Découvrez Inspire Pilates à Vertou : un studio intimiste et chaleureux baigné de lumière naturelle, dédié au mouvement, à la force et à la mobilité.",
-  alternates: { canonical: "/le-studio" },
+  alternates: { canonical: "/a-propos" },
 };
 
 const spaces = [
@@ -36,7 +36,7 @@ export default function StudioPage() {
   return (
     <>
       <PageHero
-        eyebrow="Le Studio"
+        eyebrow="À propos"
         title={
           <>
             Un lieu intimiste, pensé pour le <span className="italic">mouvement.</span>

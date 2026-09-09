@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { siteConfig, mainNav } from "@/config/site";
+import { siteConfig, footerNav } from "@/config/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = siteConfig.url.replace(/\/$/, "");
@@ -8,7 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   //  - les routes Phase 2 (non indexées) ;
   //  - les pages légales (mentions, confidentialité, CGV) qui sont en `noindex`
   //    → les lister ici serait contradictoire.
-  const publicPaths = mainNav.map((n) => n.href);
+  const publicPaths = footerNav.map((n) => n.href);
 
   // Pas de `lastModified` : sans vraie date de modification par page, un
   // `new Date()` renverrait une fraîcheur factice à chaque build. On l'omet
