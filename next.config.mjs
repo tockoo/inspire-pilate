@@ -18,21 +18,29 @@ const isDev = process.env.NODE_ENV === "development";
 // production reste stricte ('self').
 const tinaDev = isDev ? " http://localhost:4001" : "";
 
+// Widget de réservation « Séances » (page /planning), hébergé sur le
+// sous-domaine espace client. Autorisé en prod ET en dev.
+const widget = "https://moncompte.inspirepilates.fr";
+
+// Vercel Web Analytics — charge son script depuis va.vercel-scripts.com
+// (requis par une CSP stricte, cf. doc Vercel).
+const analytics = "https://va.vercel-scripts.com";
+
 const csp = [
   "default-src 'self'",
   "base-uri 'self'",
   "object-src 'none'",
   "frame-ancestors 'none'",
   "form-action 'self'",
-  `img-src 'self' data: blob:${isDev ? " http://localhost:4001 https:" : ""}`,
+  `img-src 'self' data: blob: ${widget}${isDev ? " http://localhost:4001 https:" : ""}`,
   `font-src 'self' data:${tinaDev}`,
-  "style-src 'self' 'unsafe-inline'",
-  `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""}${tinaDev}`,
-  // En dev, l'admin Tina contacte aussi ses services externes (API Tina,
-  // vérification de version, analytics) → on autorise https en dev seulement.
-  `connect-src 'self'${isDev ? " http://localhost:4001 ws://localhost:4001 https: wss:" : ""}`,
-  // Carte Google Maps (embed). www.google.com peut rediriger vers maps.google.com.
-  "frame-src https://www.google.com https://maps.google.com",
+  `style-src 'self' 'unsafe-inline' ${widget}`,
+  `script-src 'self' 'unsafe-inline' ${widget} ${analytics}${isDev ? " 'unsafe-eval'" : ""}${tinaDev}`,
+  // En dev, l'admin Tina contacte ses services externes + HMR websocket
+  // (ws://localhost:3000) → on autorise https/ws en dev seulement.
+  `connect-src 'self' ${widget} ${analytics}${isDev ? " http://localhost:4001 https: ws: wss:" : ""}`,
+  // Carte Google Maps (embed) + widget de réservation (iframe éventuelle).
+  `frame-src https://www.google.com https://maps.google.com ${widget}`,
   // upgrade-insecure-requests uniquement en prod (inutile/gênant en http local).
   isDev ? null : "upgrade-insecure-requests",
 ]

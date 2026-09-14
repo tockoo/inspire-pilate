@@ -109,42 +109,6 @@ export default function StudioPage() {
         </Container>
       </Section>
 
-      {/* La professeure */}
-      <Section spacing="lg" className="bg-cream">
-        <Container>
-          <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-20">
-            <Reveal>
-              <Figure
-                src={images.professeurPilate.src}
-                alt="Dolorès, professeur·e de Pilates au studio Inspire Pilates"
-                aspect="aspect-[4/5]"
-                className="shadow-xl shadow-umber/10"
-              />
-            </Reveal>
-            <Reveal delay={120}>
-              <p className="eyebrow mb-4">La professeure</p>
-              <h2 className="text-3xl leading-tight text-balance md:text-4xl">
-                Dolorès, <span className="italic">professeur·e de Pilates.</span>
-              </h2>
-              <div className="prose-soft mt-6 space-y-4">
-                <p>
-                  Danseuse depuis toujours, le mouvement a toujours fait partie de ma
-                  vie. C&apos;est en traversant la maternité et une période personnelle
-                  plus difficile que le Pilates est devenu bien plus qu&apos;une
-                  pratique&nbsp;: une véritable reconnexion à mon corps : plus
-                  consciente, plus forte, plus alignée.
-                </p>
-                <p>
-                  C&apos;est cette expérience que je transmets aujourd&apos;hui à
-                  Vertou&nbsp;: un mouvement juste et bienveillant, à l&apos;écoute de
-                  chacun·e, où l&apos;on prend soin de soi en profondeur et à son rythme.
-                </p>
-              </div>
-            </Reveal>
-          </div>
-        </Container>
-      </Section>
-
       {/* Les espaces */}
       <Section spacing="md" className="bg-cream">
         <Container>
