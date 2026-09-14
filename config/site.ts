@@ -85,13 +85,10 @@ type ReservationTarget =
   | { type: "contact"; href: string }; // Formulaire de contact interne
 
 export const reservation: ReservationTarget = {
-  // Phase 1 : le bouton « Réserver » pointe vers WhatsApp. Le jour du
-  // déploiement de la réservation en ligne (Phase 2), basculer `type` sur
-  // "internal" avec href "/reservation".
-  type: "whatsapp",
-  href: `https://wa.me/${siteConfig.contact.phoneRaw.replace("+", "")}?text=${encodeURIComponent(
-    "Bonjour Inspire Pilates, je souhaite réserver un cours."
-  )}`,
+  // Tous les CTA « Réserver un cours » pointent vers la page /planning
+  // (widget de réservation en ligne).
+  type: "internal",
+  href: "/planning",
 };
 
 export const reservationCta = {
@@ -112,8 +109,8 @@ export const mapsEmbedUrl = `https://www.google.com/maps?q=${encodeURIComponent(
 // --- Navigation principale (Phase 1) ---
 export const mainNav: NavLink[] = [
   { label: "Accueil", href: "/" },
-  { label: "Le Studio", href: "/le-studio" },
   { label: "À propos", href: "/a-propos" },
+  { label: "Le Studio", href: "/le-studio" },
   { label: "Les Cours", href: "/les-cours" },
   { label: "Planning", href: "/planning" },
   { label: "Tarifs", href: "/tarifs" },
@@ -123,8 +120,8 @@ export const mainNav: NavLink[] = [
 // --- Navigation du footer ---
 export const footerNav: NavLink[] = [
   { label: "Accueil", href: "/" },
-  { label: "Le Studio", href: "/le-studio" },
   { label: "À propos", href: "/a-propos" },
+  { label: "Le Studio", href: "/le-studio" },
   { label: "Les Cours", href: "/les-cours" },
   { label: "Planning", href: "/planning" },
   { label: "Tarifs", href: "/tarifs" },

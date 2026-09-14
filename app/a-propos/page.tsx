@@ -59,7 +59,7 @@ export default function AProposPage() {
             Dolorès Cabardis, <span className="italic">fondatrice.</span>
           </>
         }
-        intro="Fondatrice et professeure de Pilates — j'ai créé Inspire Pilates avec l'envie de proposer bien plus qu'un cours de Pilates."
+        intro="Fondatrice et professeure de Pilates, j'ai créé Inspire Pilates avec l'envie de proposer bien plus qu'un cours de Pilates."
         image={images.professeurPilate}
         size="lg"
       />
