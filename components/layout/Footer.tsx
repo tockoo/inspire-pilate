@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 import { Logo } from "@/components/ui/Logo";
-import { ReserveButton } from "@/components/ui/ReserveButton";
+import { FooterCta } from "@/components/layout/FooterCta";
 import {
   IconPhone,
   IconMapPin,
@@ -21,15 +21,8 @@ export function Footer() {
 
   return (
     <footer className="bg-umber text-cream/85">
-      {/* Bandeau CTA */}
-      <div className="border-b border-cream/10">
-        <div className="container-wide flex flex-col items-start justify-between gap-6 py-12 md:flex-row md:items-center">
-          <p className="max-w-md font-serif text-2xl leading-tight text-cream md:text-3xl">
-            Envie de commencer&nbsp;? Réservez votre premier cours.
-          </p>
-          <ReserveButton variant="light" size="md" />
-        </div>
-      </div>
+      {/* Bandeau CTA (masqué sur /planning) */}
+      <FooterCta />
 
       <div className="container-wide grid grid-cols-1 gap-10 py-14 md:grid-cols-2 lg:grid-cols-4">
         {/* Marque */}

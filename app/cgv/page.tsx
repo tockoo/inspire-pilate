@@ -66,10 +66,10 @@ export default function CgvPage() {
             </thead>
             <tbody className="text-ink/80">
               {[
-                ["Découverte", "3", "60 €", "365 jours"],
-                ["Carte 5", "5", "150 €", "365 jours"],
-                ["Carte 10", "10", "280 €", "365 jours"],
-                ["Carte 20", "20", "500 €", "365 jours"],
+                ["Découverte", "3", "60 €", "30 jours"],
+                ["Carte 5", "5", "150 €", "60 jours"],
+                ["Carte 10", "10", "280 €", "120 jours"],
+                ["Carte 20", "20", "500 €", "240 jours"],
                 ["Carte 30", "30", "690 €", "365 jours"],
               ].map(([formule, seances, prix, validite]) => (
                 <tr key={formule} className="border-t border-umber/10">
@@ -117,14 +117,39 @@ export default function CgvPage() {
         </p>
         <p className="text-xs uppercase tracking-wider text-clay">Validité</p>
         <p>
-          Chaque formule est valable <strong>365 jours</strong> à compter de son
-          achat. Tout nouvel achat reporte l&apos;échéance de l&apos;ensemble des
-          crédits du compte à la nouvelle date, 1 an plus tard.
+          Chaque formule est valable pendant la durée indiquée dans le tableau des
+          formules et tarifs, à compter de la date de son achat :
+        </p>
+        <ul className="list-disc space-y-1.5 pl-5">
+          <li>Formule Découverte : 30 jours</li>
+          <li>Carte 5 : 60 jours</li>
+          <li>Carte 10 : 120 jours</li>
+          <li>Carte 20 : 240 jours</li>
+          <li>Carte 30 : 365 jours</li>
+        </ul>
+        <p>
+          La durée de validité est propre à chaque formule et n&apos;est pas prolongée
+          par l&apos;achat ultérieur d&apos;une autre formule.
         </p>
         <p>
-          Passée l&apos;échéance, les crédits non consommés sont perdus, sans
+          À l&apos;expiration de la période de validité, les crédits restant sur la
+          formule concernée sont automatiquement perdus, sans remboursement,
           contrepartie ni prorogation.
         </p>
+        <p className="text-xs uppercase tracking-wider text-clay">
+          Formule Découverte
+        </p>
+        <p>
+          La formule Découverte est réservée aux personnes n&apos;ayant jamais
+          bénéficié de cette formule auprès d&apos;Inspire Pilates.
+        </p>
+        <p>
+          Elle ne peut être achetée et utilisée qu&apos;une seule fois par adhérente.
+          Une même personne ne peut donc pas souscrire une nouvelle formule Découverte,
+          y compris en utilisant une autre adresse email ou en créant un nouveau compte
+          membre.
+        </p>
+        <p>La formule Découverte est personnelle, nominative et non cessible.</p>
       </LegalSection>
 
       <LegalSection heading="6. Réservation d'une séance">
@@ -176,7 +201,7 @@ export default function CgvPage() {
           accepter : c&apos;est le silence qui vaut inscription.
         </p>
         <p>
-          <strong>48 heures avant la séance</strong>, la liste se ferme. Les personnes
+          <strong>24 heures avant la séance</strong>, la liste se ferme. Les personnes
           encore en attente en sont informées et les crédits immobilisés leur sont
           intégralement restitués.
         </p>
@@ -205,7 +230,7 @@ export default function CgvPage() {
         </p>
         <p>
           Pour l&apos;achat d&apos;une formule non entamée, le studio accorde néanmoins
-          un délai de <strong>14 jours</strong> pour demander son annulation et son
+          un délai de <strong>7 jours</strong> pour demander son annulation et son
           remboursement, à condition qu&apos;aucune séance n&apos;ait été réservée avec
           ces crédits.
         </p>
