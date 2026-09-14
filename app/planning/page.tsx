@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 
 import { Section, Container } from "@/components/ui/Section";
+import { PlanningWidget } from "@/components/sections/PlanningWidget";
 
 export const metadata: Metadata = {
   title: "Planning",
@@ -25,18 +25,8 @@ export default function PlanningPage() {
           </p>
         </div>
 
-        {/* ================================================================
-            Widget de réservation « Séances »
-            Hébergé sur le sous-domaine espace client (moncompte.inspirepilates.fr).
-            Le script s'exécute après l'hydratation et injecte le planning dans
-            le conteneur #inspire-seances ci-dessous.
-            (Le domaine est autorisé dans la CSP — voir next.config.mjs.)
-            ================================================================ */}
-        <div id="inspire-seances" className="mx-auto mt-12 max-w-3xl" />
-        <Script
-          src="https://moncompte.inspirepilates.fr/widget-seances.js"
-          strategy="afterInteractive"
-        />
+        {/* Widget de réservation « Séances » (sous-domaine espace client). */}
+        <PlanningWidget />
       </Container>
     </Section>
   );

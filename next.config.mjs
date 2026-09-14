@@ -26,6 +26,11 @@ const widget = "https://moncompte.inspirepilates.fr";
 // (requis par une CSP stricte, cf. doc Vercel).
 const analytics = "https://va.vercel-scripts.com";
 
+// Barre de commentaires Vercel (vercel.live) — injectée UNIQUEMENT sur les
+// déploiements de preview. On l'autorise seulement là (la prod reste stricte).
+const vercelLive =
+  process.env.VERCEL_ENV === "preview" ? " https://vercel.live" : "";
+
 const csp = [
   "default-src 'self'",
   "base-uri 'self'",
@@ -35,12 +40,12 @@ const csp = [
   `img-src 'self' data: blob: ${widget}${isDev ? " http://localhost:4001 https:" : ""}`,
   `font-src 'self' data:${tinaDev}`,
   `style-src 'self' 'unsafe-inline' ${widget}`,
-  `script-src 'self' 'unsafe-inline' ${widget} ${analytics}${isDev ? " 'unsafe-eval'" : ""}${tinaDev}`,
+  `script-src 'self' 'unsafe-inline' ${widget} ${analytics}${vercelLive}${isDev ? " 'unsafe-eval'" : ""}${tinaDev}`,
   // En dev, l'admin Tina contacte ses services externes + HMR websocket
   // (ws://localhost:3000) → on autorise https/ws en dev seulement.
-  `connect-src 'self' ${widget} ${analytics}${isDev ? " http://localhost:4001 https: ws: wss:" : ""}`,
+  `connect-src 'self' ${widget} ${analytics}${vercelLive}${isDev ? " http://localhost:4001 https: ws: wss:" : ""}`,
   // Carte Google Maps (embed) + widget de réservation (iframe éventuelle).
-  `frame-src https://www.google.com https://maps.google.com ${widget}`,
+  `frame-src https://www.google.com https://maps.google.com ${widget}${vercelLive}`,
   // upgrade-insecure-requests uniquement en prod (inutile/gênant en http local).
   isDev ? null : "upgrade-insecure-requests",
 ]
