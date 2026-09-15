@@ -62,7 +62,7 @@ export function Header() {
     >
       <div className="w-full bg-ink py-2 text-center">
         <p className="px-4 font-sans text-[10px] font-medium uppercase tracking-[0.25em] text-cream sm:text-[11px]">
-          COMING SOON — OUVERTURE NOVEMBRE 2026
+          OUVERTURE 9 NOVEMBRE 2026
         </p>
       </div>
       <div
